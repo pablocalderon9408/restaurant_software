@@ -1,0 +1,22 @@
+{% extends 'ingredients/base.html' %}
+
+{% block head_content %}
+
+<title>@ Update ingredient</title>
+
+{% endblock %}
+
+
+
+{% block container %}
+
+<form method="Post">
+{% csrf_token %}
+
+{{form.as_p}}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
+
+
+

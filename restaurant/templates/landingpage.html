@@ -1,0 +1,108 @@
+{% extends 'users/base.html' %}
+
+{% block head_content %}
+<title>Landing Page!</title>
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navigation fixed-top sticky">
+    <div class="container">
+        <a class="navbar-logo" href="{% url 'landingpage' %}">
+            <img src="static/img/logo_laspoteiros.jpeg" alt="" height="19" class="logo logo-dark">
+        </a>
+
+        <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
+            <i class="fa fa-fw fa-bars"></i>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="topnav-menu-content">
+
+            <ul class="navbar-nav ml-auto" id="topnav-menu" >
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Prices</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">How it works?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faqs">FAQs</a>
+                </li>
+
+            </ul>
+
+            <div class="ml-lg-2">
+                <a href="{% url 'users:login' %}" class="btn btn-outline-success w-xs">Sign in</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero section started -->
+
+<section class="section hero-section bg-ico-hero" id="home">
+    <div class="bg-overlay bg-primary"></div>
+    <div class="container">
+        
+        <div class="row align-items-center">
+            <img src="{% static 'img/Octopus_laspoteiros.jpg' %}" alt="Principal Image of the Landing Page" height="600" width="500">
+            <div class="col-lg-5">
+                <div class="text-white-50">
+                    <h1 class="text-white font-weight-semibold mb-3 hero-title">Skote - Ico Landing for a cryptocurrency business</h1>
+                    <p class="font-size-14">It will be as simple as occidental in fact to an English person, it will seem like simplified as a skeptical Cambridge</p>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-8 col-sm-10 ml-lg-auto">
+                <div class="card overflow-hidden mb-0 mt-5 mt-lg-0">
+                    <div class="card-header text-center">
+                        <h5 class="mb-0">ICO Countdown time</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            
+                            <h5>Time left to Ico :</h5>
+                            <div class="mt-4">
+                                <div data-countdown="2020/12/31" class="counter-number ico-countdown"></div>
+                            </div>
+
+                            <div class="mt-4">
+                                <button type="button" class="btn btn-success w-md">Get Token</button>
+                            </div>
+
+                            <div class="mt-5">
+                                <h4 class="font-weight-semibold">1 ETH = 2235 SKT</h4>
+                                <div class="clearfix mt-4">
+                                    <h5 class="float-right font-size-14">5234.43</h5>
+                                </div>
+                                <div class="progress p-1 progress-xl softcap-progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-label">15 %</div>
+                                    </div>
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-label">30 %</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+
+<!-- End of hero section -->
+
+
+
+{% endblock%}
+
+
+
+{% block container %} 
+
+
+{% endblock %}  

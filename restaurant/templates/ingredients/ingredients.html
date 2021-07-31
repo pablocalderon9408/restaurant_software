@@ -1,0 +1,40 @@
+{% extends 'ingredients/base.html' %}
+
+{% block head_content %}
+<title>Ingredients List!</title>
+{% endblock%}
+
+{% block container %}
+
+<a href="{% url 'home' %}">Go back home</a>
+<a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a>
+<table class="Ingredient Table">
+    <thead>
+        <tr>
+            <th>Ingredient</th>
+            <th>Quantity</th>
+            <th>Unit of measure</th>
+            <th>Cost</th>
+            <th>Cost per unit</th>
+            <th>Create or edit the information</th>
+        </tr>
+    </thead>
+
+{% if ingredients %}
+    <tbody>
+        {% for ingredient in ingredients %}
+        <tr>
+            <td>{{ ingredient.ingredient_name }}</td>
+            <td>{{ ingredient.quantity }}</td>
+            <td>{{ ingredient.unit_of_measure }}</td>
+            <td>{{ ingredient.cost }}</td>
+            <td> {{ingredient.cost_per_unit}} </td>
+            
+            
+        </tr> 
+        {% endfor %}
+    </tbody>
+{% endif %}
+</table>
+
+{% endblock%}   
