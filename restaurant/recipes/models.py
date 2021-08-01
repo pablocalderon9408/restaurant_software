@@ -19,9 +19,6 @@ class Recipe(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
-
-
-
 class Recipe_Ingredient(models.Model):
 
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)

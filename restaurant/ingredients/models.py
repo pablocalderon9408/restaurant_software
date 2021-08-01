@@ -20,7 +20,7 @@ class Ingredient(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        """Return username."""
+        """Return ingredient"""
         return self.ingredient_name
 
 class Stock(models.Model):
@@ -28,9 +28,15 @@ class Stock(models.Model):
     ingredient_name = models.ForeignKey(Ingredient,on_delete=models.CASCADE)
     quantity = models.FloatField()
     total_cost = models.FloatField()
+
+    # I try this method to change the way objects are displayed in the admin but is returning an error
+    # def __str__(self):
+    #     """Return ingredient"""
+    #     return self.ingredient_name
     
     @property
     def cost_per_unit(self):
         """ Calculate the cost per unit for every ingredient """
         cost_per_unit = self.total_cost / self.quantity
         return cost_per_unit
+
