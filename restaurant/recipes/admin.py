@@ -1,7 +1,20 @@
-from django.contrib import admin
-from .models import Recipe, Recipe_Ingredient
+"""Recipies admin."""
 
 # Register your models here.
+from django.contrib import admin
+from django.db import models
+from recipes.models import Recipe, RecipeIngredient
 
-admin.site.register(Recipe)
-admin.site.register(Recipe_Ingredient)
+
+class RecipeInline(admin.TabularInline):
+    model = RecipeIngredient
+    autocomplete_fields = ['ingredient']
+    extra = 0
+
+
+@admin.register(Recipe)
+class RecipeAdmin(admin.ModelAdmin):
+    list_display = ['name', 'total_price']
+    search_fields = ['name', 'slug_name']
+    exclude = ['slug_name']
+    inlines = [RecipeInline]

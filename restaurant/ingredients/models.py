@@ -1,44 +1,49 @@
 from django.db import models
+from utils.models import BaseCreatedModel
+from slugify import slugify
 
 # Create your models here.
 
-# Create your models here.
-MILILITER = 'ml'
-GRAMS = 'g'
-UNIT = 'U'
 
-UNIT_CHOICES = [
-(MILILITER, "Liter"),
-(GRAMS, "Grams"),
-(UNIT, "Unit"),
-]
+class IngredientUnit(BaseCreatedModel):
+    name = models.CharField(max_length=50, blank=False)
+    slug_name = models.SlugField(max_length=50, blank=True, unique=True)
 
-class Ingredient(models.Model):
-    ingredient_name = models.CharField(max_length=50, blank=False)
-    unit_of_measure = models.CharField(max_length=20,choices=UNIT_CHOICES)
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug_name = slugify(self.name, separator="_")
+        return super().save(*args, **kwargs)
+
+
+class Ingredient(BaseCreatedModel):
+    name = models.CharField(max_length=50, blank=False)
+    slug_name = models.SlugField(max_length=50, blank=True, unique=True)
+    units = models.ForeignKey(IngredientUnit, on_delete=models.CASCADE)
+
+    def save(self, *args, **kwargs):
+        self.slug_name = slugify(self.name, separator="_")
+        return super().save(*args, **kwargs)
 
     def __str__(self):
         """Return ingredient"""
-        return self.ingredient_name
+        return self.name
 
-class Stock(models.Model):
+
+class Stock(BaseCreatedModel):
     """Get the total you have from a particular ingredient"""
-    ingredient_name = models.ForeignKey(Ingredient,on_delete=models.CASCADE)
-    quantity_buyed = models.FloatField()
-    total_cost = models.FloatField()
+    ingredient = models.ForeignKey(
+        Ingredient, on_delete=models.CASCADE, related_name='stock')
+    quantity = models.IntegerField(default=0)
+    price_total = models.DecimalField(
+        max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
         """Return ingredient"""
-        return self.ingredient_name.ingredient_name
-    
+        return f'Stock of {self.ingredient}'
+
     @property
-    def cost_per_unit(self):
-        """ Calculate the cost per unit for every ingredient """
-        cost_per_unit = self.total_cost / self.quantity_buyed
-        return cost_per_unit
-
-
-
-
+    def price_per_unit(self):
+        """Calculate the cost per unit for every ingredient."""
+        return self.price_total / self.quantity
