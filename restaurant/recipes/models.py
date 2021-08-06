@@ -19,17 +19,23 @@ class Recipe(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.recipe_name
+
 class Recipe_Ingredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-    ingredient_name = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
+    ingredient_name = models.ManyToManyField(Ingredient,related_name='ingredients')
     quantity = models.FloatField()
+    
 
     def __str__(self):
-        return self.recipe
+        return self.recipe.recipe_name
+
+    # def __str__(self):
+    #     return self.ingredient_name.ingredient_name
 
     def bring_variables(self):
         recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-
         return recipe.objects.all().ingredient_name
 
 
@@ -38,8 +44,6 @@ class Recipe_Ingredient(models.Model):
 
 
         """Bring the variables from the other models"""
-        
-        pass
 
     # @property
     # def cost_per_ingredient(self):

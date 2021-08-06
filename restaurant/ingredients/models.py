@@ -29,19 +29,14 @@ class Stock(models.Model):
     quantity_buyed = models.FloatField()
     total_cost = models.FloatField()
 
-    # I try this method to change the way objects are displayed in the admin but is returning an error
-    # def __str__(self):
-    #     """Return ingredient"""
-    #     return self.ingredient_name
-
     def __str__(self):
         """Return ingredient"""
-        return self.ingredient_name
+        return self.ingredient_name.ingredient_name
     
     @property
     def cost_per_unit(self):
         """ Calculate the cost per unit for every ingredient """
-        cost_per_unit = self.total_cost / self.quantity
+        cost_per_unit = self.total_cost / self.quantity_buyed
         return cost_per_unit
 
 
