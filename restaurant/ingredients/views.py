@@ -1,5 +1,6 @@
 # Create your views here.
-from .models import Ingredient
+from ingredients.models import Ingredient, Stock
+from recipes.models import RecipeIngredient
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
@@ -11,13 +12,11 @@ from django.urls import reverse, reverse_lazy
 
 class IngredientView(LoginRequiredMixin, ListView):
     """Return all published posts."""
-
     template_name = 'ingredients/ingredients.html'
-    model = Ingredient
-    queryset = Ingredient.objects.all()
+    model = Stock
+    queryset = Stock.objects.all()
     ordering = ('-created',)
     context_object_name = 'ingredients'
-
 
 class IngredientCreateView(LoginRequiredMixin, CreateView):
     model = Ingredient

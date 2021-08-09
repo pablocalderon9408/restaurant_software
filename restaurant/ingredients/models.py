@@ -2,9 +2,6 @@ from django.db import models
 from utils.models import BaseCreatedModel
 from slugify import slugify
 
-# Create your models here.
-
-
 class IngredientUnit(BaseCreatedModel):
     name = models.CharField(max_length=50, blank=False)
     slug_name = models.SlugField(max_length=50, blank=True, unique=True)
@@ -34,10 +31,14 @@ class Ingredient(BaseCreatedModel):
 class Stock(BaseCreatedModel):
     """Get the total you have from a particular ingredient"""
     ingredient = models.ForeignKey(
-        Ingredient, on_delete=models.CASCADE, related_name='stock')
+        Ingredient, 
+        on_delete=models.CASCADE, 
+        related_name='stock')
     quantity = models.IntegerField(default=0)
     price_total = models.DecimalField(
-        max_digits=10, decimal_places=2, default=0)
+        max_digits=10, 
+        decimal_places=2, 
+        default=0)
 
     def __str__(self):
         """Return ingredient"""
@@ -46,4 +47,9 @@ class Stock(BaseCreatedModel):
     @property
     def price_per_unit(self):
         """Calculate the cost per unit for every ingredient."""
-        return self.price_total / self.quantity
+        return round(self.price_total / self.quantity,2)
+
+    @property
+    def total_stock(self):
+        self.total = sum([ingredient.price for ingredient in self.recipe_ingredients.all()])
+        return self.total

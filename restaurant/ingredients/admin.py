@@ -16,14 +16,14 @@ class IngredientUnitAdmin(admin.ModelAdmin):
 
 
 @admin.register(Ingredient)
-class IngredientUnitAdmin(admin.ModelAdmin):
+class IngredientAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug_name', 'units']
     search_fields = ['name', 'slug_name']
     exclude = ['slug_name']
 
 
 @admin.register(Stock)
-class IngredientUnitAdmin(admin.ModelAdmin):
+class StockAdmin(admin.ModelAdmin):
     list_display = ['ingredient', 'quantity', 'price_total']
     search_fields = ['ingredient__name']
     autocomplete_fields = ['ingredient']

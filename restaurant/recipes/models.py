@@ -17,14 +17,14 @@ class Recipe(BaseCreatedModel):
     
     @property
     def total_price(self):
-        return sum([ingredient.price for ingredient in self.recipie_ingredients.all()])
+        return sum([ingredient.price for ingredient in self.recipe_ingredients.all()])
 
 
 class RecipeIngredient(BaseCreatedModel):
     recipe = models.ForeignKey(
-        Recipe, on_delete=models.CASCADE, related_name='recipie_ingredients')
+        Recipe, on_delete=models.CASCADE, related_name='recipe_ingredients')
     ingredient = models.ForeignKey(
-        Ingredient, on_delete=models.CASCADE, related_name='recipies')
+        Ingredient, on_delete=models.CASCADE, related_name='recipes')
     quantity = models.IntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2)
 

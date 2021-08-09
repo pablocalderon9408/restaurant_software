@@ -9,6 +9,7 @@ from recipes.models import Recipe, RecipeIngredient
 class RecipeInline(admin.TabularInline):
     model = RecipeIngredient
     autocomplete_fields = ['ingredient']
+    readonly_fields = ['price']
     extra = 0
 
 
