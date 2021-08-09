@@ -13,14 +13,14 @@ class IngredientView(LoginRequiredMixin, ListView):
     """Return all published posts."""
 
     template_name = 'ingredients/ingredients.html'
-#     model = Recipe_Ingredient
-#     queryset = Ingredient.objects.all()
-#     ordering = ('-created',)
-#     context_object_name = 'ingredients'
+    model = Ingredient
+    queryset = Ingredient.objects.all()
+    ordering = ('-created',)
+    context_object_name = 'ingredients'
 
 
-# class IngredientCreateView(LoginRequiredMixin, CreateView):
-#     model = Ingredient
-#     fields = ['ingredient_name','unit_of_measure']
-#     template_name = 'ingredients/ingredientcreate.html'
-#     success_url = reverse_lazy('ingredients:ingredientslist')
+class IngredientCreateView(LoginRequiredMixin, CreateView):
+    model = Ingredient
+    fields = ['ingredient_name','unit_of_measure']
+    template_name = 'ingredients/ingredientcreate.html'
+    success_url = reverse_lazy('ingredients:ingredientslist')

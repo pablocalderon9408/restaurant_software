@@ -10,9 +10,9 @@ urlpatterns = [
     name='ingredientslist'
     ),
 
-    # path(
-    # route='create/',
-    # view=views.IngredientCreateView.as_view(),
-    # name='ingredientcreate'
-    # ),
+    path(
+    route='create/',
+    view=views.IngredientCreateView.as_view(),
+    name='ingredientcreate'
+    ),
 ]

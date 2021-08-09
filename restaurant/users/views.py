@@ -12,7 +12,7 @@ from users.forms import SignupForm
 
 
 class LandingPage(TemplateView):
-    template_name = 'landiangpage.html'
+    template_name = 'landingpage.html'
     # def get(self, request,*args,**kwargs):
     #     return render(request, 'home.html')
 
