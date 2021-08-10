@@ -18,6 +18,11 @@ urlpatterns = [
         name='login'),
 
     path(
+        route='password-recovery/',
+        view=views.PasswordRecoveryView.as_view(),
+        name='password_recovery'),
+
+    path(
         route='signup/',
         view=views.SignupView.as_view(),
         name='signup'),

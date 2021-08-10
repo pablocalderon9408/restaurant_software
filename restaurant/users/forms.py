@@ -14,6 +14,7 @@ class SignupForm(forms.Form):
         min_length=2, 
         max_length=50
         )
+        
     username = forms.CharField(min_length=4, max_length=50)
 
     password = forms.CharField(
