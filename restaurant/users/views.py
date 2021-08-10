@@ -25,7 +25,7 @@ class Home(TemplateView):
 
 class LoginView(auth_views.LoginView):
     """Login view."""
-    template_name = 'users/login.html'
+    template_name = 'users/base_login.html'
 
 
 class LogoutView(LoginRequiredMixin, auth_views.LogoutView):

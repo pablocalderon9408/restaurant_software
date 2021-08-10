@@ -6,45 +6,41 @@
 
 {% block container %}
 
-<a href="{% url 'home' %}">Go back home</a>
-<a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a>
+    <a href="{% url 'home' %}">Go back home</a>
+    <a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a>
 
-<p>You have a stock value in: {{total_stock}}</p>
+    <p>You have a stock value in: </p>
 
-<table class="Ingredient Table">
-    <thead>
-        <tr>
-            <th>Ingredient</th>
-            <th>Quantity</th>
-            <th>Unit of measure</th>
-            <th>Cost</th>
-            <th>Cost per unit</th>
-            <th>Create or edit the information</th>
-        </tr>
-    </thead>
+    <table class="Ingredient Table">
+        <thead>
+            <tr>
+                <th>Ingredient</th>
+                <th>Quantity</th>
+                <th>Unit of measure</th>
+                <th>Cost</th>
+                <th>Cost per unit</th>
+                <th>Create or edit the information</th>
+            </tr>
+        </thead>
 
-{% if ingredients %}
-            <th>Cost</th>
-            <th>Cost per unit</th>
-            <th>Create or edit the information</th>
-        </tr>
-    </thead>
+    {% if ingredients %}
+                <th>Cost</th>
+                <th>Cost per unit</th>
+                <th>Create or edit the information</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ingredient in ingredients %}
+            <tr>
+                <td>{{ ingredient.ingredient.name }}</td>
+                <td>{{ ingredient.quantity }}</td>
+                <td>{{ ingredient.ingredient.units}}</td>
+                <td>{{ ingredient.price_total }}</td>
+                <td> {{ingredient.price_per_unit}} </td>  
+            </tr> 
+            {% endfor %}
+        </tbody>
+    {% endif %}
+    </table>
 
-{% if ingredients %}
-    <tbody>
-        {% for ingredient in ingredients %}
-        <tr>
-            <td>{{ ingredient.ingredient.name }}</td>
-            <td>{{ ingredient.quantity }}</td>
-            <td>{{ ingredient.ingredient.units}}</td>
-            <td>{{ ingredient.price_total }}</td>
-            <td> {{ingredient.price_per_unit}} </td>
-            
-            
-        </tr> 
-        {% endfor %}
-    </tbody>
-{% endif %}
-</table>
-
-{% endblock%}   
+{% endblock %}   

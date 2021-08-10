@@ -6,6 +6,14 @@ from users.models import Profile
 class SignupForm(forms.Form):
     """Sign up form."""
 
+    first_name = forms.CharField(
+        min_length=2, 
+        max_length=50
+    )
+    last_name = forms.CharField(
+        min_length=2, 
+        max_length=50
+        )
     username = forms.CharField(min_length=4, max_length=50)
 
     password = forms.CharField(
@@ -16,9 +24,6 @@ class SignupForm(forms.Form):
         max_length=70,
         widget=forms.PasswordInput()
     )
-
-    first_name = forms.CharField(min_length=2, max_length=50)
-    last_name = forms.CharField(min_length=2, max_length=50)
 
     email = forms.CharField(
         min_length=6,
