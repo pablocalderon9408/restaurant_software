@@ -21,11 +21,19 @@ class Recipe(BaseCreatedModel):
 
 
 class RecipeIngredient(BaseCreatedModel):
+    
     recipe = models.ForeignKey(
-        Recipe, on_delete=models.CASCADE, related_name='recipe_ingredients')
+        Recipe, 
+        on_delete=models.CASCADE, 
+        related_name='recipe_ingredients')
+
     ingredient = models.ForeignKey(
-        Ingredient, on_delete=models.CASCADE, related_name='recipes')
+        Ingredient, 
+        on_delete=models.CASCADE, 
+        related_name='recipes')
+
     quantity = models.IntegerField(default=1)
+
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):

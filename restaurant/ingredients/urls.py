@@ -5,9 +5,9 @@ from ingredients import views
 
 urlpatterns = [
     path(
-    route='list/',
-    view=views.IngredientView.as_view(),
-    name='ingredientslist'
+    route='stock/',
+    view=views.StockView.as_view(),
+    name='stocklist'
     ),
 
     path(

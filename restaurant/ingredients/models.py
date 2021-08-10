@@ -30,11 +30,14 @@ class Ingredient(BaseCreatedModel):
 
 class Stock(BaseCreatedModel):
     """Get the total you have from a particular ingredient"""
+
     ingredient = models.ForeignKey(
         Ingredient, 
         on_delete=models.CASCADE, 
         related_name='stock')
+
     quantity = models.IntegerField(default=0)
+
     price_total = models.DecimalField(
         max_digits=10, 
         decimal_places=2, 
@@ -47,9 +50,11 @@ class Stock(BaseCreatedModel):
     @property
     def price_per_unit(self):
         """Calculate the cost per unit for every ingredient."""
-        return round(self.price_total / self.quantity,2)
+        price_per_unit = round(self.price_total / self.quantity,2)
+        return price_per_unit
 
     @property
     def total_stock(self):
-        self.total = sum([ingredient.price for ingredient in self.recipe_ingredients.all()])
-        return self.total
+        """Calculate the amount of inventory you have (In money)"""
+        total_stock = sum([ingredient.price_total for ingredient in self.Stock.all()])
+        return total_stock

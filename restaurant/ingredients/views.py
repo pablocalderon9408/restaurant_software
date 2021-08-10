@@ -10,7 +10,7 @@ from django.urls import reverse, reverse_lazy
 
 # # Create your views here.
 
-class IngredientView(LoginRequiredMixin, ListView):
+class StockView(LoginRequiredMixin, ListView):
     """Return all published posts."""
     template_name = 'ingredients/ingredients.html'
     model = Stock
@@ -20,6 +20,6 @@ class IngredientView(LoginRequiredMixin, ListView):
 
 class IngredientCreateView(LoginRequiredMixin, CreateView):
     model = Ingredient
-    fields = ['ingredient_name','unit_of_measure']
+    fields = ['name','units']
     template_name = 'ingredients/ingredientcreate.html'
-    success_url = reverse_lazy('ingredients:ingredientslist')
+    success_url = reverse_lazy('ingredients:stocklist')
