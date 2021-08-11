@@ -9,7 +9,7 @@
     <a href="{% url 'home' %}">Go back home</a>
     <a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a>
 
-    <p>You have a stock valued in: {{Stock.price_per_unit}} COP </p>
+    <p>You have a stock valued in: {{ingredients.Stock.total_stock}} COP </p>
 
     <table class="table">
         

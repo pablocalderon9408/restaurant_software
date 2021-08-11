@@ -56,5 +56,6 @@ class Stock(BaseCreatedModel):
     @property
     def total_stock(self):
         """Calculate the amount of inventory you have (In money)"""
-        total_stock = sum([ingredient.price_total for ingredient in self.Stock.all()])
+        # total_stock = sum([ing.price_total for ing in self.ingredient.objects.all()])
+        total_stock = 100899
         return total_stock
