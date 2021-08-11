@@ -5,12 +5,12 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>ICO Landing | Skote - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>Landing | Restaurant Software</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo_laspoteiros.jpeg' %}">
 
     <!-- owl.carousel css -->
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
@@ -34,7 +34,7 @@
         }
 
         #home {
-            background-image: url("{% static 'img/bg-ico-hero.jpg' %}");
+            background-image: url("{% static 'img/yellow-background.jpg' %}");
         }
     </style>
 
@@ -44,9 +44,9 @@
 
     <nav class="navbar navbar-expand-lg navigation fixed-top sticky">
         <div class="container">
-            <a class="navbar-logo" href="index.html">
-                <img src="{%static 'img/logo-dark.png' %}" alt="" height="19" class="logo logo-dark">
-                <img src="{%static 'img/logo-light.png' %}" alt="" height="19" class="logo logo-light">
+            <a class="navbar-logo" href="{% url 'landingpage'  %}" 
+                <img src="{%static 'img/logo_laspoteiros.jpeg' %}" alt="" height="19" class="logo logo-dark">
+                <img src="{%static 'img/logo_laspoteiros.jpeg' %}" alt="" height="19" class="logo logo-light">
             </a>
 
             <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
@@ -81,7 +81,7 @@
                 </ul>
 
                 <div class="ml-lg-2">
-                    <a href="#" class="btn btn-outline-success w-xs">Sign in</a>
+                    <a href="{% url 'users:login' %}" class="btn btn-outline-success w-xs">Sign in</a>
                 </div>
             </div>
         </div>
@@ -94,14 +94,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="text-white-50">
-                        <h1 class="text-white font-weight-semibold mb-3 hero-title">Skote - Ico Landing for a
-                            cryptocurrency business</h1>
-                        <p class="font-size-14">It will be as simple as occidental in fact to an English person, it will
-                            seem like simplified as a skeptical Cambridge</p>
+                        <h1 class="text-white font-weight-semibold mb-3 hero-title">Restaurant Software - Landing for a
+                            Restaurant business</h1>
+                        <p class="font-size-14">It will be as simple as charging your inventory and start to take control of your restaurant</p>
 
                         <div class="button-items mt-4">
-                            <a href="#" class="btn btn-success">Get Whitepaper</a>
-                            <a href="#" class="btn btn-light">How it work</a>
+                            <a href="#" class="btn btn-success">Get Free Trial</a>
+                            <a href="#" class="btn btn-light">How it work?</a>
                         </div>
                     </div>
                 </div>
@@ -229,7 +228,7 @@
                 <div class="col-lg-12">
                     <div class="text-center mb-5">
                         <div class="small-title">About us</div>
-                        <h4>What is ICO Token?</h4>
+                        <h4>What is the Restaurant Software?</h4>
                     </div>
                 </div>
             </div>
@@ -237,10 +236,9 @@
                 <div class="col-lg-5">
 
                     <div class="text-muted">
-                        <h4>Best ICO for your cryptocurrency business</h4>
-                        <p>If several languages coalesce, the grammar of the resulting that of the individual new common
-                            language will be more simple and regular than the existing.</p>
-                        <p class="mb-4">It would be necessary to have uniform pronunciation.</p>
+                        <h4>Best software for your business</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo veritatis voluptatibus magnam sed iure adipisci? Esse, cupiditate, dolor, sed ex rerum laudantium provident voluptate numquam nam eum quaerat porro odit?</p>
+                        <p class="mb-4">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..</p>
 
                         <div class="button-items">
                             <a href="#" class="btn btn-success">Read More</a>
@@ -256,8 +254,8 @@
                             </div>
                             <div class="col-lg-4 col-6">
                                 <div class="mt-4">
-                                    <h4>16245</h4>
-                                    <p>Users</p>
+                                    <h4>1645</h4>
+                                    <p>Active Restaurant</p>
                                 </div>
                             </div>
                         </div>
@@ -273,7 +271,7 @@
                                         <div class="mb-3">
                                             <i class="mdi mdi-bitcoin h2 text-success"></i>
                                         </div>
-                                        <h5>Lending</h5>
+                                        <h5>Improve your sales</h5>
                                         <p class="text-muted mb-0">At vero eos et accusamus et iusto blanditiis</p>
 
                                     </div>
@@ -288,7 +286,7 @@
                                         <div class="mb-3">
                                             <i class="mdi mdi-wallet-outline h2 text-success"></i>
                                         </div>
-                                        <h5>Wallet</h5>
+                                        <h5>Stock control</h5>
                                         <p class="text-muted mb-0">Quis autem vel eum iure reprehenderit</p>
 
                                     </div>
@@ -310,22 +308,22 @@
                     <div class="owl-carousel owl-theme clients-carousel" id="clients-carousel">
                         <div class="item">
                             <div class="client-images">
-                                <img src="{% static 'img/1.png' %}" alt="client-img" class="mx-auto img-fluid d-block">
+                                <img src="{% static 'img/rest1.jpeg' %}" alt="client-img" class="mx-auto img-fluid d-block">
                             </div>
                         </div>
                         <div class="item">
                             <div class="client-images">
-                                <img src="{% static 'img/2.png' %}" alt="client-img" class="mx-auto img-fluid d-block">
+                                <img src="{% static 'img/rest2.jpg' %}" alt="client-img" class="mx-auto img-fluid d-block">
                             </div>
                         </div>
                         <div class="item">
                             <div class="client-images">
-                                <img src="{% static 'img/3.png' %}" alt="client-img" class="mx-auto img-fluid d-block">
+                                <img src="{% static 'img/rest3.png' %}" alt="client-img" class="mx-auto img-fluid d-block">
                             </div>
                         </div>
                         <div class="item">
                             <div class="client-images">
-                                <img src="{% static 'img/4.png' %}" alt="client-img" class="mx-auto img-fluid d-block">
+                                <img src="{% static 'img/rest4.png' %}" alt="client-img" class="mx-auto img-fluid d-block">
                             </div>
                         </div>
                         <div class="item">
@@ -363,18 +361,16 @@
             <div class="row align-items-center pt-4">
                 <div class="col-md-6 col-sm-8">
                     <div>
-                        <img src="{% static 'img/img-1.png' %}" alt="" class="img-fluid mx-auto d-block">
+                        <img src="{% static 'img/stock.jpg' %}" alt="" class="img-fluid mx-auto d-block">
                     </div>
                 </div>
                 <div class="col-md-5 ml-auto">
                     <div class="mt-4 mt-md-auto">
                         <div class="d-flex align-items-center mb-2">
                             <div class="features-number font-weight-semibold display-4 mr-3">01</div>
-                            <h4 class="mb-0">Lending</h4>
+                            <h4 class="mb-0">Stock</h4>
                         </div>
-                        <p class="text-muted">If several languages coalesce, the grammar of the resulting language is
-                            more simple and regular than of the individual will be more simple and regular than the
-                            existing.</p>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa molestiae obcaecati quisquam officiis pariatur voluptatibus modi soluta commodi? Aliquam suscipit voluptatum culpa nisi, dolores iure ex molestias officia aperiam numquam.</p>
                         <div class="text-muted mt-4">
                             <p class="mb-2"><i class="mdi mdi-circle-medium text-success mr-1"></i>Donec pede justo vel
                                 aliquet</p>
@@ -390,10 +386,9 @@
                     <div class="mt-4 mt-md-0">
                         <div class="d-flex align-items-center mb-2">
                             <div class="features-number font-weight-semibold display-4 mr-3">02</div>
-                            <h4 class="mb-0">Wallet</h4>
+                            <h4 class="mb-0">Sales</h4>
                         </div>
-                        <p class="text-muted">It will be as simple as Occidental; in fact, it will be Occidental. To an
-                            English person, it will seem like simplified English, as a skeptical Cambridge friend.</p>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dolores illo reprehenderit. Incidunt autem repellat vero saepe temporibus enim rerum placeat veniam, magnam sit ut deserunt exercitationem suscipit, blanditiis aliquam.</p>
                         <div class="text-muted mt-4">
                             <p class="mb-2"><i class="mdi mdi-circle-medium text-success mr-1"></i>Donec pede justo vel
                                 aliquet</p>
@@ -403,7 +398,7 @@
                 </div>
                 <div class="col-md-6  col-sm-8 ml-md-auto">
                     <div class="mt-4 mr-md-0">
-                        <img src="{% static 'img/img-2.png' %}" alt="" class="img-fluid mx-auto d-block">
+                        <img src="{% static 'img/sales.jpg' %}" alt="" class="img-fluid mx-auto d-block">
                     </div>
                 </div>
 
@@ -434,16 +429,15 @@
                             <div class="item event-list">
                                 <div>
                                     <div class="event-date">
-                                        <div class="text-primary mb-1">December, 2019</div>
-                                        <h5 class="mb-4">ICO Platform Idea</h5>
+                                        <div class="text-primary mb-1">August, 2021</div>
+                                        <h5 class="mb-4">Platform Idea</h5>
                                     </div>
                                     <div class="event-down-icon">
                                         <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
                                     </div>
 
                                     <div class="mt-3 px-3">
-                                        <p class="text-muted">It will be as simple as occidental in fact it will be
-                                            Cambridge</p>
+                                        <p class="text-muted">Give control of everything to restaurant owners</p>
                                     </div>
                                 </div>
                             </div>
@@ -451,16 +445,15 @@
                             <div class="item event-list">
                                 <div>
                                     <div class="event-date">
-                                        <div class="text-primary mb-1">January, 2020</div>
-                                        <h5 class="mb-4">Research on project</h5>
+                                        <div class="text-primary mb-1">September, 2021</div>
+                                        <h5 class="mb-4">Participate in growth capital</h5>
                                     </div>
                                     <div class="event-down-icon">
                                         <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
                                     </div>
 
                                     <div class="mt-3 px-3">
-                                        <p class="text-muted">To an English person, it will seem like simplified English
-                                            existence.</p>
+                                        <p class="text-muted">Raise some money from investors</p>
                                     </div>
                                 </div>
                             </div>
@@ -468,16 +461,15 @@
                             <div class="item event-list active">
                                 <div>
                                     <div class="event-date">
-                                        <div class="text-primary mb-1">February, 2020</div>
-                                        <h5 class="mb-4">ICO & Token Design</h5>
+                                        <div class="text-primary mb-1">October, 2021</div>
+                                        <h5 class="mb-4">Deployment </h5>
                                     </div>
                                     <div class="event-down-icon">
                                         <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
                                     </div>
 
                                     <div class="mt-3 px-3">
-                                        <p class="text-muted">For science, music, sport, etc, Europe uses the same
-                                            vocabulary.</p>
+                                        <p class="text-muted">Commercial taks starts</p>
                                     </div>
                                 </div>
                             </div>
@@ -485,15 +477,15 @@
                             <div class="item event-list">
                                 <div>
                                     <div class="event-date">
-                                        <div class="text-primary mb-1">March, 2020</div>
-                                        <h5 class="mb-4">ICO Launch Platform</h5>
+                                        <div class="text-primary mb-1">November, 2021 </div>
+                                        <h5 class="mb-4">Customer Retention/h5>
                                     </div>
                                     <div class="event-down-icon">
                                         <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
                                     </div>
 
                                     <div class="mt-3 px-3">
-                                        <p class="text-muted">New common language will be more simple than existing.</p>
+                                        <p class="text-muted">GRowth of 100% per month</p>
                                     </div>
                                 </div>
                             </div>
@@ -501,16 +493,15 @@
                             <div class="item event-list">
                                 <div>
                                     <div class="event-date">
-                                        <div class="text-primary mb-1">April, 2020</div>
-                                        <h5 class="mb-4">Token sale round 1</h5>
+                                        <div class="text-primary mb-1">December, 2021 </div>
+                                        <h5 class="mb-4">Selling process</h5>
                                     </div>
                                     <div class="event-down-icon">
                                         <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
                                     </div>
 
                                     <div class="mt-3 px-3">
-                                        <p class="text-muted">It will be as simple as occidental in fact it will be
-                                            Cambridge</p>
+                                        <p class="text-muted">Project sold to Elon Musk</p>
                                     </div>
                                 </div>
                             </div>
@@ -518,16 +509,15 @@
                             <div class="item event-list">
                                 <div>
                                     <div class="event-date">
-                                        <div class="text-primary mb-1">May, 2020</div>
-                                        <h5 class="mb-4">Token sale round 2</h5>
+                                        <div class="text-primary mb-1">January, 2021</div>
+                                        <h5 class="mb-4">Negotiation</h5>
                                     </div>
                                     <div class="event-down-icon">
                                         <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
                                     </div>
 
                                     <div class="mt-3 px-3">
-                                        <p class="text-muted">To an English person, it will seem like simplified English
-                                            existence.</p>
+                                        <p class="text-muted">Jeff Bezos want to buy it as well.</p>
                                     </div>
                                 </div>
                             </div>
@@ -561,7 +551,7 @@
                         <div class="card text-center team-box">
                             <div class="card-body">
                                 <div>
-                                    <img src="{% static 'img/avatar-2.jpg' %}" alt="" class="rounded">
+                                    <img src="{% static 'img/Lionel-Messi-Profile.png' %}" alt="" class="rounded">
                                 </div>
 
                                 <div class="mt-3">
@@ -806,7 +796,7 @@
         </div>
         <!-- end container -->
     </section>
-    <!-- Blog end -->
+    Blog end
 
     <!-- Faqs start -->
     <section class="section" id="faqs">
