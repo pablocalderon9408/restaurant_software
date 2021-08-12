@@ -22,6 +22,17 @@ html, body {
     border-radius: 3px;
 }
 
+
+.poteiros {
+    background: rgb(255,208,2);
+    max-height: 100 px;
+}
+
+.poteiros .img{
+    background: rgb(255,208,2);
+    max-height: 100 px !important;
+}
+
 .nav-icon a {
     color: #262626;
     font-size: 1.3em;

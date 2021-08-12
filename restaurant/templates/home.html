@@ -19,10 +19,12 @@
         <link href="{% static 'css/icons.css' %}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{% static 'css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+        <!-- Main Css-->
+        <link href="{% static 'css/main.css' %}" id="app-style" rel="stylesheet" type="text/css" />
 
     </head>
 
-    <!-- <body data-sidebar="dark"> -->
+    <body data-sidebar="dark">
 
         <!-- Begin page -->
         <!-- <div id="layout-wrapper"> -->
@@ -31,7 +33,7 @@
                 <div class="navbar-header pr-2">
                     <div class="d-flex">
                         <!-- LOGO -->
-                        <div class="navbar-brand-box">
+                        <!-- <div class="navbar-brand-box"> -->
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
                                     <img src="assets/images/logo.svg" alt="" height="22">
@@ -49,7 +51,7 @@
                                     <img src="assets/images/logo-light.png" alt="" height="19">
                                 </span>
                             </a>
-                        </div>
+                        <!-- </div> -->
 
                         <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
                             <i class="fa fa-fw fa-bars"></i>
@@ -740,9 +742,9 @@
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
-            <div class="main-content">
+            <!-- <div class="col-10 offset-1 main-content"> -->
 
-                <div class="page-content">
+                <div class="offset-0 page-content">
                     <div class="container-fluid">
 
                         <!-- start page title -->
@@ -766,17 +768,17 @@
                         <div class="row">
                             <div class="col-xl-4">
                                 <div class="card overflow-hidden">
-                                    <div class="bg-soft-primary">
-                                        <div class="row">
-                                            <div class="col-7">
-                                                <div class="text-primary p-3">
+                                    <div class="poteiros">
+                                        <div class="row">   
+                                            <!-- <div class="col-7"> -->
+                                                <div class="text-primary p-3 ml-2" >
                                                     <h5 class="text-primary">Welcome Back !</h5>
-                                                    <p>Skote Dashboard</p>
+                                                    <p>Restaurant Dashboard</p>
                                                 </div>
-                                            </div>
-                                            <div class="col-5 align-self-end">
-                                                <img src="{% static 'img/profile-img.png' %}" alt="" class="img-fluid">
-                                            </div>
+                                                <!-- </div> -->
+                                                <div class="col-5 align-self-end">
+                                                    <img src="{% static 'img/logo_laspoteiros.jpeg' %}" alt="" class="img-fluid" style="max-height: 153px">
+                                                </div>
                                         </div>
                                     </div>
                                     <div class="card-body pt-0">
@@ -785,8 +787,8 @@
                                                 <div class="avatar-md profile-user-wid mb-4">
                                                     <img src="{% static 'img/avatar-1.jpg' %}" alt="" class="img-thumbnail rounded-circle">
                                                 </div>
-                                                <h5 class="font-size-15 text-truncate">Henry Price</h5>
-                                                <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
+                                                <h5 class="font-size-15 text-truncate">Lionel Messi</h5>
+                                                <p class="text-muted mb-0 text-truncate">Admin</p>
                                             </div>
 
                                             <div class="col-sm-8">
@@ -802,9 +804,9 @@
                                                             <p class="text-muted mb-0">Revenue</p>
                                                         </div>
                                                     </div>
-                                                    <div class="mt-4">
+                                                    <!-- <div class="mt-4">
                                                         <a href="" class="btn btn-primary waves-effect waves-light btn-sm">View Profile <i class="mdi mdi-arrow-right ml-1"></i></a>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -829,7 +831,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <p class="text-muted mb-0">We craft digital, graphic and dimensional thinking.</p>
+                                        <!-- <p class="text-muted mb-0">We craft digital, graphic and dimensional thinking.</p> -->
                                     </div>
                                 </div>
                             </div>
@@ -859,7 +861,7 @@
                                                 <div class="media">
                                                     <div class="media-body">
                                                         <p class="text-muted font-weight-medium">Revenue</p>
-                                                        <h4 class="mb-0">$35, 723</h4>
+                                                        <h4 class="mb-0">$35,723</h4>
                                                     </div>
 
                                                     <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
@@ -876,8 +878,8 @@
                                             <div class="card-body">
                                                 <div class="media">
                                                     <div class="media-body">
-                                                        <p class="text-muted font-weight-medium">Average Price</p>
-                                                        <h4 class="mb-0">$16.2</h4>
+                                                        <p class="text-muted font-weight-medium">Average Ticket</p>
+                                                        <h4 class="mb-0">$26.200</h4>
                                                     </div>
 
                                                     <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
@@ -916,7 +918,7 @@
                         </div>
                         <!-- end row -->
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-xl-4">
                                 <div class="card">
                                     <div class="card-body">
@@ -1102,7 +1104,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- end row -->
 
                         <div class="row">
@@ -1402,7 +1404,7 @@
                 </div>
                 <!-- end modal -->
 
-                <footer class="footer">
+                <!-- <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
@@ -1415,7 +1417,7 @@
                             </div>
                         </div>
                     </div>
-                </footer>
+                </footer> -->
             </div>
             <!-- end main content-->
 <!-- 
@@ -1485,6 +1487,6 @@
 
         <!-- App js -->
         <!-- <script src="{% static 'scripts/app.js' %}"></script> -->
-    <!-- </body> -->
+    </body>
 
 </html>
