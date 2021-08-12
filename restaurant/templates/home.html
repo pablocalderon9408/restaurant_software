@@ -22,13 +22,13 @@
 
     </head>
 
-    <body data-sidebar="dark">
+    <!-- <body data-sidebar="dark"> -->
 
         <!-- Begin page -->
-        <div id="layout-wrapper">
+        <!-- <div id="layout-wrapper"> -->
 
             <header id="page-topbar">
-                <div class="navbar-header">
+                <div class="navbar-header pr-2">
                     <div class="d-flex">
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
@@ -56,14 +56,16 @@
                         </button>
 
                         <!-- App Search-->
-                        <form class="app-search d-none d-lg-block">
+                        <!-- <form class="app-search d-none d-lg-block">
                             <div class="position-relative">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="bx bx-search-alt"></span>
                             </div>
-                        </form>
+                        </form> -->
 
-                        <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
+                        <!-- Megamenu dropdown ---------------------------------------------------------------------------------------------------------------- --> 
+
+                        <!-- <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
                             <button type="button" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                                 Mega Menu
                                 <i class="mdi mdi-chevron-down"></i> 
@@ -192,12 +194,13 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div> -->
+                        <!-- /Megamenu dropdown ---------------------------------------------------------------------------------------------------------------- --> 
                     </div>
 
                     <div class="d-flex">
 
-                        <div class="dropdown d-inline-block d-lg-none ml-2">
+                        <!-- <div class="dropdown d-inline-block d-lg-none ml-2">
                             <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="mdi mdi-magnify"></i>
@@ -216,7 +219,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect"
@@ -231,22 +234,24 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <img src="{% static 'img/germany.jpg' %} " alt="user-image" class="mr-1" height="12"> <span class="align-middle">German</span>
-                                </a>
+                                </a> -->
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <img src="{% static 'img/italy.jpg' %} " alt="user-image" class="mr-1" height="12"> <span class="align-middle">Italian</span>
-                                </a>
+                                </a> -->
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <img src="{% static 'img/russia.jpg' %} " alt="user-image" class="mr-1" height="12"> <span class="align-middle">Russian</span>
-                                </a>
+                                </a> -->
                             </div>
                         </div>
 
+                        <!-- Second item next to the flag element ---------------------------------------------------------------------------------------------------------- -->
+<!-- 
                         <div class="dropdown d-none d-lg-inline-block ml-1">
                             <button type="button" class="btn header-item noti-icon waves-effect"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -297,19 +302,21 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="dropdown d-none d-lg-inline-block ml-1">
+                        <!-- / Second item next to the flag element ---------------------------------------------------------------------------------------------------------- -->
+
+                        <!-- <div class="dropdown d-none d-lg-inline-block ml-1">
                             <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
                                 <i class="bx bx-fullscreen"></i>
                             </button>
-                        </div>
+                        </div> -->
 
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <h6><span class="badge badge-danger badge-pill">13</span></h6>
                                 <i class="bx bx-bell bx-tada"></i>
-                                <span class="badge badge-danger badge-pill">3</span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                                 aria-labelledby="page-header-notifications-dropdown">
@@ -332,9 +339,9 @@
                                                 </span>
                                             </div>
                                             <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Your order is placed</h6>
+                                                <h6 class="mt-0 mb-1">Pepsi is running out of stock</h6>
                                                 <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
+                                                    <p class="mb-1">Remember to place your order</p>
                                                     <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
                                                 </div>
                                             </div>
@@ -347,8 +354,8 @@
                                             <div class="media-body">
                                                 <h6 class="mt-0 mb-1">James Lemire</h6>
                                                 <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">It will seem like simplified English.</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
+                                                    <p class="mb-1">Customer placed an order.</p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hour ago</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -361,16 +368,16 @@
                                                 </span>
                                             </div>
                                             <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Your item is shipped</h6>
+                                                <h6 class="mt-0 mb-1">Your customer has arrived</h6>
                                                 <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
+                                                    <p class="mb-1">Do you haver your order ready? </p>
                                                     <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
 
-                                    <a href="" class="text-reset notification-item">
+                                    <!-- <a href="" class="text-reset notification-item">
                                         <div class="media">
                                             <img src="{% static 'img/avatar-4.jpg' %}"
                                                 class="mr-3 rounded-circle avatar-xs" alt="user-pic">
@@ -382,11 +389,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
                                 <div class="p-2 border-top">
                                     <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)">
-                                        <i class="mdi mdi-arrow-right-circle mr-1"></i> View More..
+                                        <i class="mdi mdi-arrow-right-circle mr-1"></i> View All..
                                     </a>
                                 </div>
                             </div>
@@ -403,9 +410,9 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <!-- item-->
                                 <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle mr-1"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle mr-1"></i> My Wallet</a>
+                                <!-- <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle mr-1"></i> My Wallet</a> -->
                                 <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
-                                <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
+                                <!-- <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a> -->
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-danger" href="#"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
                             </div>
@@ -419,15 +426,17 @@
             
                     </div>
                 </div>
-            </header> <!-- ========== Left Sidebar Start ========== -->
-<div class="vertical-menu">
+            </header> 
 
-    <div data-simplebar class="h-100">
+<!-- =================================================================================== Left Sidebar Start ============================================================-->
+<!-- <div class="vertical-menu">
+
+    <div data-simplebar class="h-100"> -->
 
         <!--- Sidemenu -->
-        <div id="sidebar-menu">
+        <!-- <div id="sidebar-menu"> -->
             <!-- Left Menu Start -->
-            <ul class="metismenu list-unstyled" id="side-menu">
+            <!-- <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Menu</li>
 
                 <li>
@@ -565,9 +574,9 @@
                         <li><a href="contacts-list.html">User List</a></li>
                         <li><a href="contacts-profile.html">Profile</a></li>
                     </ul>
-                </li>
+                </li> -->
 
-                <li class="menu-title">Pages</li>
+                <!-- <li class="menu-title">Pages</li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -722,11 +731,11 @@
                 </li>
 
             </ul>
-        </div>
+        </div> -->
         <!-- Sidebar -->
-    </div>
-</div>
-<!-- Left Sidebar End -->
+    <!-- </div>
+</div> -->
+<!-- ==============================================================  Left Sidebar End ============================================================== -->
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
@@ -1409,8 +1418,8 @@
                 </footer>
             </div>
             <!-- end main content-->
-
-        </div>
+<!-- 
+        </div> -->
         <!-- END layout-wrapper -->
 
         <!-- Right Sidebar -->
@@ -1476,6 +1485,6 @@
 
         <!-- App js -->
         <!-- <script src="{% static 'scripts/app.js' %}"></script> -->
-    </body>
+    <!-- </body> -->
 
 </html>
