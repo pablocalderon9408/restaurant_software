@@ -4,45 +4,65 @@
 <title>Ingredients List!</title>
 {% endblock%}
 
+
+
+{% block table-temporary%}
+
+{% block content-title %}
+<h4 class="mb-0 font-size-30 text-center ">Dashboard Stock</h4>
+{% endblock %}
+
+<div class="offset-1 page-content">
+    <div class="container-fluid">
+
+        <table class="table">
+                
+            <thead>
+                <tr>
+                    <th scope="col">Ingredient</th>
+                    <th scope="col">Quantity Available</th>
+                    <th scope="col">Unit of measure</th>
+                    <th scope="col">Cost</th>
+                    <th scope="col">Cost per unit</th>
+                    <th scope="col">Create or edit the information</th>
+                </tr>
+            </thead>
+
+        {% if ingredients %}
+                    <!-- <th>Cost</th>
+                    <th>Cost per unit</th>
+                    <th>Create or edit the information</th>
+                </tr> -->
+            </thead>
+            <tbody>
+                {% for ingredient in ingredients %}
+                <tr>
+                    <td>{{ ingredient.ingredient.name }}</td>
+                    <td>{{ ingredient.quantity }}</td>
+                    <td>{{ ingredient.ingredient.units}}</td>
+                    <td>{{ ingredient.price_total }}</td>
+                    <td> {{ingredient.price_per_unit}} </td>
+                
+                </tr> 
+                {% endfor %}
+            </tbody>
+        {% endif %}
+        </table>
+    </div>
+</div>
+{% endblock %}
+
 {% block container %}
 
-    <a href="{% url 'home' %}">Go back home</a>
+
+    <!-- <a href="{% url 'home' %}">Go back home</a>
     <a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a>
 
-    <p>You have a stock valued in: {{ingredients.Stock.total_stock}} COP </p>
+    <p>You have a stock valued in: {{ingredients.Stock.total_stock}} COP </p> -->
 
-    <table class="table">
-        
-        <thead>
-            <tr>
-                <th scope="col">Ingredient</th>
-                <th scope="col">Quantity Available</th>
-                <th scope="col">Unit of measure</th>
-                <th scope="col">Cost</th>
-                <th scope="col">Cost per unit</th>
-                <th scope="col">Create or edit the information</th>
-            </tr>
-        </thead>
 
-    {% if ingredients %}
-                <!-- <th>Cost</th>
-                <th>Cost per unit</th>
-                <th>Create or edit the information</th>
-            </tr> -->
-        </thead>
-        <tbody>
-            {% for ingredient in ingredients %}
-            <tr>
-                <td>{{ ingredient.ingredient.name }}</td>
-                <td>{{ ingredient.quantity }}</td>
-                <td>{{ ingredient.ingredient.units}}</td>
-                <td>{{ ingredient.price_total }}</td>
-                <td> {{ingredient.price_per_unit}} </td>
-            
-            </tr> 
-            {% endfor %}
-        </tbody>
-    {% endif %}
-    </table>
+    
+
+
 
 {% endblock %}   
