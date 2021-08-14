@@ -1,21 +1,19 @@
 {% extends 'ingredients/base.html' %}
 
-{% block head_content %}
-<title>Ingredients List!</title>
-{% endblock%}
+{% block head_content %}<title>Ingredients List!</title>{% endblock%}
 
 
-
-{% block table-temporary%}
 
 {% block content-title %}
-<h4 class="mb-0 font-size-30 text-center ">Dashboard Stock</h4>
+    <h4 class="mb-0 font-size-18 text-center"><strong>Stock Dashboard </strong></h4>
 {% endblock %}
 
-<div class="offset-1 page-content">
+{% block content%}
+
+<div class="offset-1 page-content pt-0">
     <div class="container-fluid">
 
-        <table class="table">
+        <table class="table table-bordered col-sm-12 col-xl-10 col-md-8 text-center border-top">
                 
             <thead>
                 <tr>
@@ -24,7 +22,7 @@
                     <th scope="col">Unit of measure</th>
                     <th scope="col">Cost</th>
                     <th scope="col">Cost per unit</th>
-                    <th scope="col">Create or edit the information</th>
+                    <!-- <th scope="col">Create or edit the information</th> -->
                 </tr>
             </thead>
 
@@ -52,17 +50,7 @@
 </div>
 {% endblock %}
 
-{% block container %}
-
-
     <!-- <a href="{% url 'home' %}">Go back home</a>
     <a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a>
 
     <p>You have a stock valued in: {{ingredients.Stock.total_stock}} COP </p> -->
-
-
-    
-
-
-
-{% endblock %}   

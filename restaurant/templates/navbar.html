@@ -1,30 +1,39 @@
 <!-- -------------------------------------------- NAVIGATION BAR ------------------------------------------ -->
 {% load static %}
 
+<style>
+
+    #vertical-menu-btn {
+        font-size: 22px !important;
+    }
+
+</style>
+
 <body data-sidebar="dark">
     <header id="page-topbar">
         <div class="navbar-header">
             <div class="d-flex">
-                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn" data-toggle="tooltip" data-placement="bottom" title="Home">
                     <a href="{% url 'home' %}"><i class="fa fa-fw bx bxs-home "></i></a>
                 </button>
-
-                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                
+                
+                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn"data-toggle="tooltip" data-placement="bottom" title="Sales">
                     <i class="fa bx bx-line-chart "></i>
                 </button>
-
-                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn" >
-                    <a href="{% url 'ingredients:stocklist' %}"><i class="fa fa-fw bx bx-food-menu "></i></a>
-                    
+                
+                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn"data-toggle="tooltip" data-placement="bottom" title="Expenses">
+                    <i class="fa fa-fw bx bxs-calculator"></i>
+                </button>
+                
+                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn" data-toggle="tooltip" data-placement="bottom" title="Stock">
+                    <a href="{% url 'ingredients:stocklist' %}"><i class="fa fa-fw bx bx-food-menu "></i></a>    
                 </button>
 
-                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn"data-toggle="tooltip" data-placement="bottom" title="Vendors">
                     <i class="fa fa-fw bx bxs-truck "></i>
                 </button>
 
-                <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
-                    <i class="fa fa-fw bx bxs-calculator"></i>
-                </button>
 
             </div>
             
