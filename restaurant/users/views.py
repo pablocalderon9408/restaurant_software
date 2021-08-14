@@ -16,6 +16,14 @@ class LandingPage(TemplateView):
     # def get(self, request,*args,**kwargs):
     #     return render(request, 'home.html')
 
+class Sales(LoginRequiredMixin,TemplateView):
+    template_name = 'sales.html'
+
+class Expenses(LoginRequiredMixin,TemplateView):
+    template_name = 'expenses.html'
+
+class Vendors(LoginRequiredMixin,TemplateView):
+    template_name = 'vendors.html'
 
 class Home(LoginRequiredMixin,TemplateView):
     template_name = 'home.html'

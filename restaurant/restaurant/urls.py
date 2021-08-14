@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from users.views import LandingPage,Home
+from users.views import LandingPage,Home, Sales, Vendors, Expenses
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -23,6 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LandingPage.as_view(), name = 'landingpage'),
     path('home/', Home.as_view(), name = 'home'),
+    path('sales/', Sales.as_view(), name = 'sales'),
+    path('vendors/', Vendors.as_view(), name = 'vendors'),
+    path('expenses/', Expenses.as_view(), name = 'expenses'),
     path('users/', include(('users.urls','users'),namespace='users')),
     path('ingredients/', include(('ingredients.urls','ingredients'),namespace='ingredients')),
     path('recipes/', include(('recipes.urls','recipes'),namespace='recipes'))

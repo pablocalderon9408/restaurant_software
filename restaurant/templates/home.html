@@ -1,29 +1,27 @@
+{% extends 'ingredients/base.html' %}
 {% load static %}
+{% block head_content %}<title>Restaurant Summary!</title>{% endblock%}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
+    <!-- <head>
         <meta charset="utf-8" />
         <title>Dashboard | Skote - Responsive Bootstrap 4 Admin Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
+        <meta content="Themesbrand" name="author" /> -->
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{% static 'img/logo_laspoteiros.jpeg' %}">
+        <!-- <link rel="shortcut icon" href="{% static 'img/logo_laspoteiros.jpeg' %}"> -->
 
         <!-- Bootstrap Css -->
-        <link href="{% static 'css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- <link href="{% static 'css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" /> -->
         <!-- Icons Css -->
-        <link href="{% static 'css/icons.css' %}" rel="stylesheet" type="text/css" />
+        <!-- <link href="{% static 'css/icons.css' %}" rel="stylesheet" type="text/css" /> -->
         <!-- App Css-->
-        <link href="{% static 'css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+        <!-- <link href="{% static 'css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" /> -->
         <!-- Main Css-->
-        <link href="{% static 'css/main.css' %}" id="app-style" rel="stylesheet" type="text/css" />
-    </head>
-
-    {% include 'navbar.html' %}
-
-
+        <!-- <link href="{% static 'css/main.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+    </head> -->
 
     <!-- <body data-sidebar="dark"> -->
 
@@ -762,28 +760,13 @@
             <!-- ============================================================== -->
             <!-- <div class="col-10 offset-1 main-content"> -->
 
-                <div class="offset-0 page-content">
+                <div class="offset-0 page-content ">
                     <div class="container-fluid">
 
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-18">Dashboard</h4>
+                        {% block content-title %} <h4 class="mb-0 font-size-18">Restaurant Summary</h4> {% endblock %}
 
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                            <li class="breadcrumb-item active">Dashboard</li>
-                                        </ol>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end page title -->
-
-                        <div class="row">
+     {% block content%}
+                        <div class="row mr-4 ml-4">
                             <div class="col-xl-4">
                                 <div class="card overflow-hidden">
                                     <div class="poteiros">
@@ -1128,7 +1111,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-body ml-4 mr-4">
                                         <h4 class="card-title mb-4">Latest Transaction</h4>
                                         <div class="table-responsive">
                                             <table class="table table-centered table-nowrap mb-0">
@@ -1490,6 +1473,8 @@
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+
+    {% endblock %}
 
         <!-- JAVASCRIPT -->
         <script src="{% static 'scripts/jquery.min.js' %}"></script>
