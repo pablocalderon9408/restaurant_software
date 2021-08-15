@@ -2,23 +2,158 @@
 {% load static %}
 {% block head_content %}<title>Restaurant Summary!</title>{% endblock%}
 
+<style>
 
+    .col-md-2{
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+        background-color: blueviolet !important;
+    }
 
+</style>
 
-<div class="offset-0 page-content ">
+<div class="page-content ">
     <div class="container-fluid">
 
         {% block content-title %} <h4 class="mb-0 font-size-18">Restaurant Sales</h4> {% endblock %}
 
         {% block content%}
-        
-        
-        <div class="offset-1 page-content pt-0">
-            <div class="container-fluid">
-                <div class="table-responsive">
+
+
+        <div class="row">
+            <div class="col-md-2 offset-1 col-lg-2 offset-1 col-sm-10 offset-1">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Orders</p>
+                                <h4 class="mb-0">1,235</h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-copy-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Orders</p>
+                                <h4 class="mb-0">1,235</h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-copy-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Orders</p>
+                                <h4 class="mb-0">1,235</h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-copy-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Orders</p>
+                                <h4 class="mb-0">1,235</h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-copy-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <!-- <div class="col-md-2 col-10 col-sm-10 offset-1">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Orders</p>
+                                <h4 class="mb-0">1,235</h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-copy-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-10 col-sm-10 offset-1">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Revenue</p>
+                                <h4 class="mb-0">$35,723</h4>
+                            </div>
+
+                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                                <span class="avatar-title rounded-circle bg-primary">
+                                    <i class="bx bx-archive-in font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-10 col-sm-10 offset-1">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Average Ticket</p>
+                                <h4 class="mb-0">$26.200</h4>
+                            </div>
+
+                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                                <span class="avatar-title rounded-circle bg-primary">
+                                    <i class="bx bx-purchase-tag-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="table-responsive col-12 offset-1">
+                                
+                <table  id="example" class="table table-striped text-center">
                             
-                <table  id="example" class="table table-striped col-sm-12 col-xl-10 col-md-8 text-center border-top">
-                        
                     <thead>
                         <tr>
                             <th scope="col">Ingredient</th>
@@ -26,16 +161,11 @@
                             <th scope="col">Unit of measure</th>
                             <th scope="col">Cost</th>
                             <th scope="col">Cost per unit</th>
-                            <!-- <th scope="col">Create or edit the information</th> -->
                         </tr>
                     </thead>
-        
-                {% if ingredients %}
-                            <!-- <th>Cost</th>
-                            <th>Cost per unit</th>
-                            <th>Create or edit the information</th>
-                        </tr> -->
-                    </thead>
+            
+                        {% if ingredients %}
+
                     <tbody>
                         {% for ingredient in ingredients %}
                         <tr>
@@ -48,14 +178,10 @@
                         </tr> 
                         {% endfor %}
                     </tbody>
-                {% endif %}
+                        {% endif %}
                 </table>
-
-                </div>
-
+    
             </div>
+
         </div>
-        
-        
-        
         {% endblock %}
