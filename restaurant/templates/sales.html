@@ -3,7 +3,59 @@
 {% block head_content %}<title>Restaurant Summary!</title>{% endblock%}
 
 
+
+
 <div class="offset-0 page-content ">
     <div class="container-fluid">
 
         {% block content-title %} <h4 class="mb-0 font-size-18">Restaurant Sales</h4> {% endblock %}
+
+        {% block content%}
+        
+        
+        <div class="offset-1 page-content pt-0">
+            <div class="container-fluid">
+                <div class="table-responsive">
+                            
+                <table  id="example" class="table table-striped col-sm-12 col-xl-10 col-md-8 text-center border-top">
+                        
+                    <thead>
+                        <tr>
+                            <th scope="col">Ingredient</th>
+                            <th scope="col">Quantity Available</th>
+                            <th scope="col">Unit of measure</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col">Cost per unit</th>
+                            <!-- <th scope="col">Create or edit the information</th> -->
+                        </tr>
+                    </thead>
+        
+                {% if ingredients %}
+                            <!-- <th>Cost</th>
+                            <th>Cost per unit</th>
+                            <th>Create or edit the information</th>
+                        </tr> -->
+                    </thead>
+                    <tbody>
+                        {% for ingredient in ingredients %}
+                        <tr>
+                            <td>{{ ingredient.ingredient.name }}</td>
+                            <td>{{ ingredient.quantity }}</td>
+                            <td>{{ ingredient.ingredient.units}}</td>
+                            <td>{{ ingredient.price_total }}</td>
+                            <td> {{ingredient.price_per_unit}} </td>
+                        
+                        </tr> 
+                        {% endfor %}
+                    </tbody>
+                {% endif %}
+                </table>
+
+                </div>
+
+            </div>
+        </div>
+        
+        
+        
+        {% endblock %}

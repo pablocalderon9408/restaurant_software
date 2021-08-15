@@ -12,39 +12,42 @@
 
 <div class="offset-1 page-content pt-0">
     <div class="container-fluid">
+        <div class="table-responsive">
+                            
+        <table  id="example" class="table table-striped col-sm-12 col-xl-10 col-md-8 text-center border-top">
 
-        <table class="table table-bordered col-sm-12 col-xl-10 col-md-8 text-center border-top">
-                
-            <thead>
-                <tr>
-                    <th scope="col">Ingredient</th>
-                    <th scope="col">Quantity Available</th>
-                    <th scope="col">Unit of measure</th>
-                    <th scope="col">Cost</th>
-                    <th scope="col">Cost per unit</th>
-                    <!-- <th scope="col">Create or edit the information</th> -->
-                </tr>
-            </thead>
+            <!-- <table class="table table-bordered col-sm-12 col-xl-10 col-md-8 text-center border-top"> -->
+                    
+                <thead>
+                    <tr>
+                        <th scope="col">Ingredient</th>
+                        <th scope="col">Quantity Available</th>
+                        <th scope="col">Unit of measure</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Cost per unit</th>
+                        <!-- <th scope="col">Create or edit the information</th> -->
+                    </tr>
+                </thead>
 
-        {% if ingredients %}
-                    <!-- <th>Cost</th>
-                    <th>Cost per unit</th>
-                    <th>Create or edit the information</th>
-                </tr> -->
-            </thead>
-            <tbody>
-                {% for ingredient in ingredients %}
-                <tr>
-                    <td>{{ ingredient.ingredient.name }}</td>
-                    <td>{{ ingredient.quantity }}</td>
-                    <td>{{ ingredient.ingredient.units}}</td>
-                    <td>{{ ingredient.price_total }}</td>
-                    <td> {{ingredient.price_per_unit}} </td>
-                
-                </tr> 
-                {% endfor %}
-            </tbody>
-        {% endif %}
+            {% if ingredients %}
+                        <!-- <th>Cost</th>
+                        <th>Cost per unit</th>
+                        <th>Create or edit the information</th>
+                    </tr> -->
+                </thead>
+                <tbody>
+                    {% for ingredient in ingredients %}
+                    <tr>
+                        <td>{{ ingredient.ingredient.name }}</td>
+                        <td>{{ ingredient.quantity }}</td>
+                        <td>{{ ingredient.ingredient.units}}</td>
+                        <td>{{ ingredient.price_total }}</td>
+                        <td> {{ingredient.price_per_unit}} </td>
+                    
+                    </tr> 
+                    {% endfor %}
+                </tbody>
+            {% endif %}
         </table>
     </div>
 </div>
