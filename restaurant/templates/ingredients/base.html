@@ -19,7 +19,13 @@
         <link href="{% static 'css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
                 <!-- Main Css-->
         <link href="{% static 'css/main.css' %}" id="app-style" rel="stylesheet" type="text/css" />
-                             
+        <!-- Data Tables -->
+        <link href="{% static 'DataTables/datatables.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{% static 'DataTables/DataTables-1.10.25/css/dataTables.bootstrap4.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+        <!-- Font Awesome Icons -->
+        <script src="https://kit.fontawesome.com/6c9d55a491.js" crossorigin="anonymous"></script>
+        
+        
     </head>
 
     <!-- --------------------------------------- START OF CONTENT  ---------------------------------- -->
@@ -58,6 +64,25 @@
             <script src="{% static 'scripts/apexcharts.min.js' %}"></script>
 
             <script src="{% static 'scripts/dashboard.init.js' %}"></script>
+
+
+
+            
+
+            <!-- Script to dataTable: download in Excel, pdf or print -->
+
+            <script src="{% static 'DataTables/datatables.min.js' %}"></script>
+
+            <!-- dataTable: script propio -->
+            <script src="{% static 'scripts/main.js' %}"></script>
+            
+            
+            <!-- dataTable: use buttons -->
+            <script src="{% static 'DataTables/Buttons-1.7.1/js/dataTables.buttons.min.js' %}"></script>
+            <script src="{% static 'DataTables/JSZip-2.5.0/jszip.min.js' %}"></script>
+            <script src="{% static 'DataTables/pdfmake-0.1.36/pdfmake.min.js' %}"></script>
+            <script src="{% static 'DataTables/pdfmake-0.1.36/vfs_fonts.js' %}"></script>
+            <script src="{% static 'DataTables/Buttons-1.7.1/js/buttons.html5.min.js' %}"></script>
 
             <!-- App js -->
             <!-- <script src="{% static 'scripts/app.js' %}"></script> -->
