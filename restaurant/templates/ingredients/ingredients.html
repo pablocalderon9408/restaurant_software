@@ -2,7 +2,12 @@
 
 {% block head_content %}<title>Ingredients List!</title>{% endblock%}
 
-
+<style>
+    #Tabla-download{
+        margin-right: 20px !important;
+        padding-inline: 20px !important;
+    }
+</style>
 
 {% block content-title %}
     <h4 class="mb-0 font-size-18 text-center"><strong>Stock Dashboard </strong></h4>
@@ -12,7 +17,7 @@
 
 <div class="offset-1 page-content pt-0">
     <div class="container-fluid">
-        <div class="table-responsive">
+        <div class="table-responsive" id="Tabla-download">
                             
         <table  id="example" class="table table-striped col-sm-12 col-xl-10 col-md-8 text-center border-top">
 
