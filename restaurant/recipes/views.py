@@ -9,7 +9,7 @@ from django.urls import reverse, reverse_lazy
 # Create your views here.
 
 class RecipeView(LoginRequiredMixin, ListView):
-    """Return all published posts."""
+    """Return all recipes."""
 
     template_name = 'recipes/recipe.html'
     model = Recipe

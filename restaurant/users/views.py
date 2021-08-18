@@ -35,6 +35,12 @@ class LoginView(auth_views.LoginView):
     """Login view."""
     template_name = 'users/login.html'
 
+
+
+
+
+    
+
 class PasswordRecoveryView(auth_views.LoginView):
     """Login view."""
     template_name = 'users/password_recovery.html'
