@@ -6,11 +6,11 @@ from users import views
 
 urlpatterns = [
 
-    # path(
-    #     route='',
-    #     view=views.Home.as_view(),
-    #     name='home'
-    # ),
+    path(
+        route='',
+        view=views.Home.as_view(),
+        name='home'
+    ),
         # Management
     path(
         route='login/',

@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from users.views import LandingPage,Home, Sales, Vendors, Expenses
+
+from users.views import LandingPage,Home, Sales, Vendors, Expenses, Trial
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,5 +29,6 @@ urlpatterns = [
     path('expenses/', Expenses.as_view(), name = 'expenses'),
     path('users/', include(('users.urls','users'),namespace='users')),
     path('ingredients/', include(('ingredients.urls','ingredients'),namespace='ingredients')),
-    path('recipes/', include(('recipes.urls','recipes'),namespace='recipes'))
+    path('recipes/', include(('recipes.urls','recipes'),namespace='recipes')),
+    path('trial/', Trial.as_view(), name = 'trial'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -23,14 +23,52 @@
      <style>
         .text-pot {
                 color: black !important;
-
         }
     </style>
+
 </head>
+    <body>
+        
+        <div class="account-pages my-5 pt-sm-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card overflow-hidden">
+                            <div class="poteiros mb-4">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="text-pot p-4">
+                                            {% block Title_of_block %}
+                                            {% endblock %}
+                                        </div>
+                                    </div>
+                                    <div class="col-5 align-self-end">
+                                        <img src="{% static 'img/logo_laspoteiros.jpeg' %}" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
 
-<body>
-    {% block container %} {% endblock%}    
-</body>
+                            <div class="card-body pt-0 mb-2">
+                                <div class="p-2">
+                                {% block form %}
+                                {% endblock %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
+        <!-- JAVASCRIPT -->
+        <script src="{% static 'scripts/jquery.min.js'%}"></script>
+        <script src="{% static 'scripts/boobootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'scripts/metisMenu.min.js' %}"></script>
+        <script src="{% static 'scripts/simplebar.min.js' %}"></script>
+        <script src="{% static 'scripts/waves.min.js' %}"></script>
+        
+        <!-- App js -->
+        <script src="{% static 'scripts/app.js' %}"></script>
+        
+    </body>
 </html>
