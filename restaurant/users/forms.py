@@ -8,28 +8,41 @@ class SignupForm(forms.Form):
 
     first_name = forms.CharField(
         min_length=2, 
-        max_length=50
+        max_length=50,
+        label=False,
+        widget=forms.TextInput(attrs={'placeholder':'Nombre completo','class': 'form-control','required': True})
     )
     last_name = forms.CharField(
         min_length=2, 
-        max_length=50
+        max_length=50,
+        label=False,
+        widget=forms.TextInput(attrs={'placeholder':'Apellidos','class': 'form-control','required': True})
         )
         
-    username = forms.CharField(min_length=4, max_length=50)
+    username = forms.CharField(
+        min_length=4,
+        max_length=50,
+        label=False,
+        widget=forms.TextInput(attrs={'placeholder':'Nombre de usuario','class': 'form-control','required': True})
+    )
 
     password = forms.CharField(
         max_length=70,
-        widget=forms.PasswordInput()
+        label=False,
+        widget=forms.PasswordInput(attrs={'placeholder':'Contraseña','class': 'form-control','required': True})
     )
+
     password_confirmation = forms.CharField(
         max_length=70,
-        widget=forms.PasswordInput()
+        label= False,
+        widget=forms.PasswordInput(attrs={'placeholder':'Confirmar contraseña','class': 'form-control','required': True})
     )
 
     email = forms.CharField(
         min_length=6,
         max_length=70,
-        widget=forms.EmailInput()
+        label=False,
+        widget=forms.EmailInput(attrs={'placeholder':'Email','class': 'form-control','required': True})
     )
 
 

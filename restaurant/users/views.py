@@ -9,7 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from users.forms import SignupForm
 
 # Create your views here.
-
+class Trial(TemplateView):
+    template_name = 'trial.html'
 
 class LandingPage(TemplateView):
     template_name = 'landingpage.html'
@@ -27,29 +28,18 @@ class Vendors(LoginRequiredMixin,TemplateView):
 
 class Home(LoginRequiredMixin,TemplateView):
     template_name = 'home.html'
-# def home(request):
-#     return render(request, 'home.html')
-
 
 class LoginView(auth_views.LoginView):
     """Login view."""
     template_name = 'users/login.html'
 
-
-
-
-
-    
-
 class PasswordRecoveryView(auth_views.LoginView):
     """Login view."""
     template_name = 'users/password_recovery.html'
 
-
 class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
     """Logout view."""
     template_name = 'users/logged_out.html'
-
 
 class SignupView(FormView):
     """Users sign up view."""
