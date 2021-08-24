@@ -11,6 +11,7 @@
 
 {% block content-title %}
     <h4 class="mb-0 font-size-18 text-center"><strong>Stock Dashboard </strong></h4>
+    
 {% endblock %}
 
 {% block content%}
@@ -18,7 +19,9 @@
 <div class="offset-1 page-content pt-0">
     <div class="container-fluid">
         <div class="table-responsive" id="Tabla-download">
-                            
+            <div class="col-12 m-2"><a href="{% url 'ingredients:ingredientcreate' %}">Create ingredient</a></div>
+            <br>
+            
         <table  id="example" class="table table-striped col-sm-12 col-xl-10 col-md-8 text-center border-top">
 
             <!-- <table class="table table-bordered col-sm-12 col-xl-10 col-md-8 text-center border-top"> -->
@@ -34,31 +37,29 @@
                     </tr>
                 </thead>
 
-            {% if ingredients %}
-                        <!-- <th>Cost</th>
-                        <th>Cost per unit</th>
-                        <th>Create or edit the information</th>
-                    </tr> -->
+            {% if stock %}
+
                 </thead>
                 <tbody>
-                    {% for ingredient in ingredients %}
+                    {% for ingredient in stock %}
                     <tr>
                         <td>{{ ingredient.ingredient.name }}</td>
                         <td>{{ ingredient.quantity }}</td>
                         <td>{{ ingredient.ingredient.units}}</td>
                         <td>{{ ingredient.price_total }}</td>
                         <td> {{ingredient.price_per_unit}} </td>
-                    
+                        
                     </tr> 
                     {% endfor %}
+                    <p>You have a stock valued in: {{total_stock.total_stock}} COP </p>
                 </tbody>
             {% endif %}
         </table>
     </div>
 </div>
-{% endblock %}
 
-    <!-- <a href="{% url 'home' %}">Go back home</a>
-    <a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a>
-
-    <p>You have a stock valued in: {{ingredients.Stock.total_stock}} COP </p> -->
+<!-- <a href="{% url 'home' %}">Go back home</a>
+    <a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a> -->
+    
+    
+    {% endblock %}
