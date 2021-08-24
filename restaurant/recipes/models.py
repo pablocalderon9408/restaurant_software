@@ -11,6 +11,7 @@ class Recipe(BaseCreatedModel):
     def __str__(self):
         return self.name
 
+    # Guardar recetas con un nombre único (slug name: el nombre usado + _)
     def save(self, *args, **kwargs):
         self.slug_name = slugify(self.name, separator="_")
         return super().save(*args, **kwargs)

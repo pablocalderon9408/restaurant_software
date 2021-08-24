@@ -1,9 +1,14 @@
 from django import forms
-from ingredients.models import Ingredient
+from ingredients.models import Ingredient, IngredientUnit, Stock
 
-class IngredientForm(forms.ModelForm):
+class StockForm(forms.ModelForm):
 
     class Meta:
+        model = Stock
+        fields = ('ingredient','quantity', 'price_total')
 
-        model = Ingredient
-        fields = ('name','units')
+class IngredientUnitForm(forms.ModelForm):
+
+    class Meta:
+        model = IngredientUnit
+        fields = ('name',)

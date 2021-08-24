@@ -11,8 +11,13 @@ urlpatterns = [
     ),
 
     path(
-    route='create/',
-    view=views.IngredientCreateView.as_view(),
+    route='stock/create/',
+    view=views.StockCreateView.as_view(),
+    name='stockcreate'
+    ),
+    path(
+    route='ingredient/create/',
+    view=views.IngredientUnitCreateView.as_view(),
     name='ingredientcreate'
     ),
 ]

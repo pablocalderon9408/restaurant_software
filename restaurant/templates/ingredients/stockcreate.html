@@ -2,7 +2,7 @@
 
 {% block head_content %}
 
-<title>@ Create ingredient</title>
+<title>@ Update ingredient</title>
 
 {% endblock %}
 
@@ -25,8 +25,8 @@
                     <input
                         class="form-control {% if form.ingredient.errors %}is-invalid{% endif %}"
                         type="text"
-                        name="name"
-                        placeholder="Ingredient name"
+                        name="ingredient"
+                        placeholder="Ingredient"
                         value = "{% if form.errors %}{{form.ingredient.value}}{% endif %}"
                     >
                     <div class="invalid-feedback">
@@ -34,20 +34,35 @@
                     </div>
                 </div>
             
-                {# Units Field field #}
-                <!-- <div class="form-group">
-                    <label>Units:</label>
+                {# Photo field #}
+                <div class="form-group">
+                    <label>Quantity to enter:</label>
                     <input
                         class="form-control {% if form.units.errors %}is-invalid{% endif %}"
                         type="text"
-                        name="units"
-                        placeholder="Unit of measure of the ingredient"
+                        name="quantity"
+                        placeholder="quantity"
                         required
                     >
                     <div class="invalid-feedback">
                         {% for error in form.photo.errors %}{{ error }}{% endfor %}
                     </div>
-                </div> -->
+                </div>
+            
+                <div class="form-group">
+                    <label>Cost of the ingredient quantity:</label>
+                    <input
+                        class="form-control {% if form.units.errors %}is-invalid{% endif %}"
+                        type="text"
+                        name="price_total"
+                        placeholder="Total amount paid per ingredient"
+                        required
+                    >
+                    <div class="invalid-feedback">
+                        {% for error in form.photo.errors %}{{ error }}{% endfor %}
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-primary btn-block mt-5">Save!</button>
             </form>
 
@@ -57,6 +72,3 @@
 
 
 {% endblock %}
-
-
-
