@@ -19,7 +19,11 @@
 <div class="offset-1 page-content pt-0">
     <div class="container-fluid">
         <div class="table-responsive" id="Tabla-download">
-            <div class="col-12 m-2"><a href="{% url 'ingredients:ingredientcreate' %}">Create ingredient</a></div>
+            <div class="row">
+                <div class="col-4 m-0"><a href="{% url 'ingredients:ingredientcreate' %}">Create unit of measure</a></div>
+                <div class="col-4 m-0"><a href="{% url 'ingredients:ingredientcreate' %}">Create ingredient</a></div>
+                <div class="col-4 m-0"><a href="{% url 'ingredients:stockcreate' %}">Create stock</a></div>
+            </div>
             <br>
             
         <table  id="example" class="table table-striped col-sm-12 col-xl-10 col-md-8 text-center border-top">
