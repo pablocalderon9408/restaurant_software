@@ -11,7 +11,7 @@ urlpatterns = [
     ),
 
     path(
-    route='stock/create/',
+    route='stockcreate/',
     view=views.StockCreateView.as_view(),
     name='stockcreate'
     ),

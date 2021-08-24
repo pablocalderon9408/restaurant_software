@@ -1,14 +1,14 @@
 # Create your views here.
 from pdb import set_trace
 from typing import ContextManager
-from ingredients.models import Ingredient, Stock
+from ingredients.models import Ingredient, IngredientUnit, Stock
 from recipes.models import RecipeIngredient
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, FormView, UpdateView
 from django.urls import reverse, reverse_lazy
-from ingredients.forms import IngredientUnitForm, IngredientUnitForm, StockForm
+from ingredients.forms import IngredientUnitForm, StockForm
 # from recipes.models import Recipe_Ingredient
 
 # # Create your views here.
@@ -38,19 +38,29 @@ class StockView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs): 
         context = super().get_context_data(**kwargs)
         context['total_stock']= Stock.objects.first()
-        
         return context
 
-class StockCreateView(LoginRequiredMixin, CreateView):
+class StockCreateView(LoginRequiredMixin, FormView):
     form_class = StockForm
     template_name = 'ingredients/stockcreate.html'
     success_url = reverse_lazy('ingredients:stocklist')
 
-    def get_context_data(self, **kwargs):
-        #Overwrite the method
+    def get_context_data(self, **kwargs): 
         context = super().get_context_data(**kwargs)
-        #Get aditional context
-        context['ingredients'] = Ingredient.objects.all()
-        context['stock'] = Stock.objects.all()
- 
+        context['ingredientunit']= IngredientUnit.objects.all()
         return context
+
+    def form_valid(self,form):
+        #Guardar el formulario asociado
+        form.save()
+        return super().form_valid(form)
+
+
+    # def get_context_data(self, **kwargs):
+    #     #Overwrite the method
+    #     context = super().get_context_data(**kwargs)
+    #     #Get aditional context
+    #     context['ingredients'] = Ingredient.objects.all()
+    #     context['stock'] = Stock.objects.all()
+ 
+    #     return context
