@@ -22,6 +22,7 @@
                 {# Ingredient field #}
                 <div class="form-group">
                     <label>Ingredient:</label>
+
                     {{form.ingredient}}
                     <div class="invalid-feedback">
                         {% for error in form.ingredient.errors %}{{ error }}{% endfor %}

@@ -24,6 +24,6 @@ class IngredientAdmin(admin.ModelAdmin):
 
 @admin.register(Stock)
 class StockAdmin(admin.ModelAdmin):
-    list_display = ['ingredient', 'quantity', 'price_total']
+    list_display = ['ingredient', 'quantity','price_total']
     search_fields = ['ingredient__name']
     autocomplete_fields = ['ingredient']
