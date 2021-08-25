@@ -22,41 +22,11 @@
                 {# Ingredient field #}
                 <div class="form-group">
                     <label>Ingredient:</label>
-                    <input
-                        class="form-control {% if form.ingredient.errors %}is-invalid{% endif %}"
-                        type="text"
-                        name="ingredient"
-                        placeholder="Ingredient name"
-                        value = "{% if form.errors %}{{form.ingredient.value}}{% endif %}"
-                    >
+                    {{form.ingredient}}
                     <div class="invalid-feedback">
                         {% for error in form.ingredient.errors %}{{ error }}{% endfor %}
                     </div>
                 </div>
-                {# IngredientUnit field #}
-                <div class="form-group">
-                    <label>Ingredient's Units of measure:</label>
-                    <br>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <!-- <option selected>Ingredient's unit of measure</option> -->
-                        {% for option in ingredientunit %}
-                        <option>{{option.ingredient.units.name}}</option>
-                        {% endfor %}
-                      
-                      </select>
-                    
-                    <!-- <input
-                        class="form-control {% if form.units.errors %}is-invalid{% endif %}"
-                        type="text"
-                        name="units"
-                        placeholder="Ingredient's Unit of measure"
-                        value = "{% if form.errors %}{{form.units.value}}{% endif %}"
-                    >
-                    <div class="invalid-feedback">
-                        {% for error in form.units.errors %}{{ error }}{% endfor %}
-                    </div> -->
-                </div>
-            
                 {# Stock field #}
                 <div class="form-group">
                     <label>Quantity to enter:</label>

@@ -16,26 +16,22 @@
                 {% csrf_token %}
 
                 <div class="row mt-2 ">
-                    <p><strong>Create your ingredients!</strong> </p>
+                    <p><strong>Create your ingredients units!</strong> </p>
 
                 </div>
                 
                 <div class="form-group">
-                    <label>Choose your ingredient:</label>
+                    <label>Choose your ingredient unit:</label>
                     <input
-                        class="form-control {% if form.ingredient.errors %}is-invalid{% endif %}"
+                        class="form-control {% if form.name.errors %}is-invalid{% endif %}"
                         type="text"
                         name="name"
-                        placeholder="Ingredient name"
-                        value = "{% if form.errors %}{{form.ingredient.value}}{% endif %}"
+                        placeholder="Ingredient unit name"
+                        value = "{% if form.errors %}{{form.name.value}}{% endif %}"
                     >
                     <div class="invalid-feedback">
-                        {% for error in form.title.errors %}{{ error }}{% endfor %}
+                        {% for error in form.name.errors %}{{ error }}{% endfor %}
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="">{{form.units.label}}</label>
-                    {{form.units}}
                 </div>
             
                 {# Units Field field #}
