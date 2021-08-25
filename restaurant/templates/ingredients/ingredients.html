@@ -20,8 +20,8 @@
     <div class="container-fluid">
         <div class="table-responsive" id="Tabla-download">
             <div class="row">
-                <div class="col-4 m-0"><a href="{% url 'ingredients:ingredientcreate' %}">Create unit of measure</a></div>
-                <div class="col-4 m-0"><a href="{% url 'ingredients:ingredientcreate' %}">Create ingredient</a></div>
+                <div class="col-4 m-0"><a href="{% url 'ingredients:ingredient-create' %}">Create unit of measure</a></div>
+                <div class="col-4 m-0"><a href="{% url 'ingredients:ingredient-unit-create' %}">Create ingredient</a></div>
                 <div class="col-4 m-0"><a href="{% url 'ingredients:stockcreate' %}">Create stock</a></div>
             </div>
             <br>
@@ -62,8 +62,4 @@
     </div>
 </div>
 
-<!-- <a href="{% url 'home' %}">Go back home</a>
-    <a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a> -->
-    
-    
     {% endblock %}

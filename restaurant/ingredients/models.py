@@ -27,7 +27,7 @@ class Ingredient(BaseCreatedModel):
 
     def __str__(self):
         """Return ingredient. Thanks to this method, when an ingredient object is called, the ingredient name will be shown"""
-        return self.name
+        return f'{self.name} ({self.units.name})'
 
     def total_stock(self):
         """Calculate the amount of inventory you have (In money)"""
