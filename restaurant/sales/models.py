@@ -1,32 +1,38 @@
+from menu.models import Menu
 from django.db import models
-
+from django.db.models.aggregates import Max
+from utils.models import BaseCreatedModel
+from slugify import slugify
 # Create your models here.
 
-# Create your models here.
-LITER = 'L'
-KILOGRAMS = 'Kg'
-GRAMS = 'g'
-UNIT = 'U'
-
-UNIT_CHOICES = [
-(LITER, "Liter"),
-(KILOGRAMS, "Kilograms"),
-(GRAMS, "Grams"),
-(UNIT, "Unit"),
+PAYMENT_METHODS = [
+    ('TC', "Credit Card"),
+    ('QR', "Transferencia o QR"),
+    ('EFE', "Efectivo"),
+    ('TD', "Tarjeta débito"),
 ]
 
-class Sale(models.Model):
+
+class Sale(BaseCreatedModel):
     customer_name = models.CharField(max_length=50, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
+    payment_method = models.CharField(choices=PAYMENT_METHODS, max_length=25)
+    menu = models.ForeignKey(
+        Menu, 
+        on_delete=models.CASCADE, 
+        related_name='sale_menu',
+        default=None
+    )
+    quantity_ordered = models.IntegerField()
+    discount = models.FloatField(default=0)
 
-
-# Calculated fields: order (how to have a list with the diferent menu products?), state_of_sale (create all the environment to change the status), price, payment_method.
-
-    def cost_per_ingredient(self):
-        cost_per_ingredient = self.ingredient_quantity
-        return cost_per_ingredient
 
     def __str__(self):
-        """Return username."""
-        return self.sale
+        return f'Sale {self.pk} was successfully created'
+
+    
+
+    # def save(self, *args, **kwargs):
+    #     """Create the slug name of the objects created in the model: IngredientUnit"""
+    #     self.slug_name = slugify(self.name, separator="_")
+    #     return super().save(*args, **kwargs)
+

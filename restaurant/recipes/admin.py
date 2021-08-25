@@ -19,3 +19,5 @@ class RecipeAdmin(admin.ModelAdmin):
     search_fields = ['name', 'slug_name']
     exclude = ['slug_name']
     inlines = [RecipeInline]
+
+

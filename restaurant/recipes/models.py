@@ -4,6 +4,9 @@ from utils.models import BaseCreatedModel
 from slugify import slugify
 
 
+
+
+
 class Recipe(BaseCreatedModel):
     name = models.CharField(max_length=50, blank=False)
     slug_name = models.SlugField(max_length=50, blank=True, unique=True)

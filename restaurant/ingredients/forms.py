@@ -1,4 +1,6 @@
+from pdb import set_trace
 from django import forms
+from django.db.models import query
 from django.forms.fields import ChoiceField
 from django.forms.widgets import Select
 from ingredients.models import Ingredient, IngredientUnit, Stock
@@ -51,22 +53,45 @@ class StockForm(forms.Form):
         return ingredient
     
     def save(self):
-
+        #Retrieve all the data
         data = self.cleaned_data
 
+        #Ingredient.name
         ingredient = data['ingredient']
+        #IngredientUnit.name
         units = data['units']
+        #Stock.quantity
         quantity = data['quantity']
+        #Stock.price_total
         price_total = data['price_total']
 
-        a = IngredientUnit(name = units)
-        a.save()
+        query = IngredientUnit.objects.filter(name=units).exists()
 
-        b = Ingredient(name=ingredient, units = a)
-        b.save()
+        if query:
+            z = IngredientUnit.objects.get(name=units)
+            b = Ingredient(name=ingredient, units = z)
+            b.save()
+            c = Stock(ingredient=b, quantity=quantity, price_total=price_total)
+            c.save()
+        else:
+            a = IngredientUnit(name=units)
+            a.save()
+            b = Ingredient(name=ingredient, units = a)
+            b.save()
+            c = Stock(ingredient=b, quantity=quantity, price_total=price_total)
+            c.save()
 
-        c = Stock(ingredient=b, quantity=quantity, price_total=price_total)
-        c.save()
+        
+        # import pdb; pdb.set_trace()
+
+        # a = IngredientUnit(name=units)
+        # a.save()
+
+        # b = Ingredient(name=ingredient, units = z)
+        # b.save()
+
+        # c = Stock(ingredient=b, quantity=quantity, price_total=price_total)
+        # c.save()
 
 class IngredientUnitForm(forms.ModelForm):
 

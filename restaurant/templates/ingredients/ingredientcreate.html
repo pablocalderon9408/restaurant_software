@@ -15,18 +15,18 @@
             <form method="Post">
                 {% csrf_token %}
 
-                <div class="row mt-2 ">
-                    <p><strong>Create your ingredients!</strong> </p>
+                <div class="row mt-2 text-center">
+                    <p><strong>Create your ingredient's unit of measure!</strong> </p>
 
                 </div>
                 
                 <div class="form-group">
-                    <label>Choose your ingredient:</label>
+                    <label>Unit of measure:</label>
                     <input
                         class="form-control {% if form.ingredient.errors %}is-invalid{% endif %}"
                         type="text"
                         name="name"
-                        placeholder="Ingredient name"
+                        placeholder="Units"
                         value = "{% if form.errors %}{{form.ingredient.value}}{% endif %}"
                     >
                     <div class="invalid-feedback">

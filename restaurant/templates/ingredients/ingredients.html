@@ -7,6 +7,11 @@
         margin-right: 20px !important;
         padding-inline: 20px !important;
     }
+
+    .dataTables_filter .dataTables_wrapper{
+        text-align: left !important;
+        margin-top: 20px;
+    }
 </style>
 
 {% block content-title %}
@@ -17,16 +22,37 @@
 {% block content%}
 
 <div class="offset-1 page-content pt-0">
+    <div class="row">
+
+        <div class="col-3 mb-1 text-center">Management Tools</div>
+        <div class="col-6 offset-3">
+
+            <div class="media-body">
+                <p class="text-muted font-weight-medium">You have a stock valued in:</p>
+                <h4 class="mb-0">${{total_stock.total_stock}} COP</h4>
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-2 mb-2 pb-2"><button class="btn btn-outline-primary"><a href="{% url 'ingredients:ingredientcreate' %}">Create unit of measure</a></button></div>
+        <div class="col-2 mb-2 pb-2"><button class="btn btn-outline-primary"><a href="{% url 'ingredients:stockcreate' %}">Create stock</a></button></div>
+    </div>
+
+
+
+
     <div class="container-fluid">
         <div class="table-responsive" id="Tabla-download">
-            <div class="row">
-                <div class="col-4 m-0"><a href="{% url 'ingredients:ingredientcreate' %}">Create unit of measure</a></div>
-                <div class="col-4 m-0"><a href="{% url 'ingredients:ingredientcreate' %}">Create ingredient</a></div>
-                <div class="col-4 m-0"><a href="{% url 'ingredients:stockcreate' %}">Create stock</a></div>
+            <!-- <div class="row">
+                <div class="col-4 offset-2"><button class="btn btn-outline-primary"><a href="{% url 'ingredients:ingredientcreate' %}">Create unit of measure</a></button></div>
+                <div class="col-4 offset-2"><button class="btn btn-outline-primary"><a href="{% url 'ingredients:stockcreate' %}">Create stock</a></button></div>
             </div>
-            <br>
+            <br> -->
             
-        <table  id="example" class="table table-striped col-sm-12 col-xl-10 col-md-8 text-center border-top">
+            <table  id="example" class="table table-striped col-sm-12 col-xl-10 col-md-8 text-center border-top">
 
             <!-- <table class="table table-bordered col-sm-12 col-xl-10 col-md-8 text-center border-top"> -->
                     
@@ -55,10 +81,11 @@
                         
                     </tr> 
                     {% endfor %}
-                    <p>You have a stock valued in: {{total_stock.total_stock}} COP </p>
+                    
                 </tbody>
             {% endif %}
-        </table>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -66,4 +93,4 @@
     <a href="{% url 'ingredients:ingredientcreate' %}">Create an ingredient</a> -->
     
     
-    {% endblock %}
+{% endblock %}

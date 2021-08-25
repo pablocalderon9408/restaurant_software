@@ -37,13 +37,14 @@
                 <div class="form-group">
                     <label>Ingredient's Units of measure:</label>
                     <br>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <select 
+                    class="form-select form-select-sm" aria-label=".form-select-sm example"
+                    name = "units">
                         <!-- <option selected>Ingredient's unit of measure</option> -->
                         {% for option in ingredientunit %}
-                        <option>{{option.ingredient.units.name}}</option>
+                        <option>{{option.name}}</option>
                         {% endfor %}
-                      
-                      </select>
+                    </select>
                     
                     <!-- <input
                         class="form-control {% if form.units.errors %}is-invalid{% endif %}"

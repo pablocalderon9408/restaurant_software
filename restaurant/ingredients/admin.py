@@ -2,7 +2,7 @@
 
 # Register your models here.
 from django.contrib import admin
-from .models import IngredientUnit, Ingredient, Stock
+from ingredients.models import IngredientUnit, Ingredient, Stock
 
 # Register your models here.
 
