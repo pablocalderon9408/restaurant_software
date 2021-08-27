@@ -1,7 +1,80 @@
-{% extends 'users/base.html' %}
+{% extends 'ingredients/base.html' %}
 
-{% block head_content %}
-    <a href="{% url 'home' %}">Go back home</a>
-    <p>{{ cost_per_ingredient }}</p>
-{% endblock%}
+{% block head_content %}<title>Recipe List!</title>{% endblock%}
 
+
+
+{% block content-title %}
+<h4 class="title_customized">
+    <strong>Stock Dashboard </strong>
+</h4>
+{% endblock %}
+
+{% block content%}
+
+<div class="offset-0 page-content pt-0 ">
+    <div class="container-fluid ">
+        <div class="row text-center">
+            <div class="col-2 ml-1 text-center " >
+                <h5>Management Tools</h5>
+            </div>
+
+            <!-- <div class="col-2 offset-3">
+                <h6>Stock valued in: $ {{total_stock.total_stock}} COP</h6>
+            </div>    -->
+            
+        </div>
+        
+        <div class="row">
+                <div class="col-xl-1 col-md-8 col-sm-12 ">
+                    <a href="{% url 'recipes:recipe-create' %}">Create recipes</a>
+                </div>
+                <div class="col-xl-1 col-md-8 col-sm-12 ">
+                    <a href="{% url 'recipes:recipe-ingredient-create' %}">Assign ingredient's to recipes!</a>
+                </div>
+            </div>
+        
+        <br>
+
+        <div class="table-responsive " id="Tabla-download">
+            
+            
+        <table  id="example" class="table table-striped col-sm-12 col-xl-10 col-md-8 text-center border-top">
+
+            <!-- <table class="table table-bordered col-sm-12 col-xl-10 col-md-8 text-center border-top"> -->
+                    
+                <thead>
+                    <tr>
+                        <th scope="col">Recipe</th>
+                        <th scope="col">Ingredient</th>
+                        <th scope="col">Cost</th>
+                        <!-- <th scope="col">Unit of measure</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Cost per unit</th> -->
+                        <!-- <th scope="col">Create or edit the information</th> -->
+                    </tr>
+                </thead>
+
+            {% if recipes %}
+
+                </thead>
+                <tbody>
+                    {% for ingredient in recipes %}
+                    <tr>
+                        <td>{{ ingredient.recipe.name }}</td>
+                        <td>{{ ingredient.ingredient.name }}</td>
+                        <td>{{ ingredient.price }}</td>
+                        <!-- <td>{{ ingredient.ingredient.units}}</td>
+                        <td>{{ ingredient.price_total }}</td>
+                        <td> {{ingredient.price_per_unit}} </td> -->
+                        
+                    </tr> 
+                    {% endfor %}
+                     
+                </tbody>
+            {% endif %}
+        </table>
+    </div>
+</div>
+
+    {% endblock %}

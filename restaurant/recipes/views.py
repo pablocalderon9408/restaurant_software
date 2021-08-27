@@ -32,7 +32,7 @@ class RecipeCreateView(LoginRequiredMixin, FormView):
 
     form_class = RecipeForm
     template_name = 'recipes/recipe_create.html'
-    success_url = reverse_lazy('')
+    success_url = reverse_lazy('ingredients:stocklist')
 
     def get_context_data(self, **kwargs): 
         context = super().get_context_data(**kwargs)
@@ -48,7 +48,7 @@ class RecipeIngredientCreateView(LoginRequiredMixin, FormView):
 
     form_class = RecipeIngredientForm
     template_name = 'recipes/recipe_ingredient_create.html'
-    success_url = reverse_lazy('')
+    success_url = reverse_lazy('ingredients:stocklist')
 
     def get_context_data(self, **kwargs): 
         context = super().get_context_data(**kwargs)

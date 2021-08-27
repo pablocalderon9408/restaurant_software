@@ -1,1 +1,76 @@
 {% extends 'ingredients/base.html' %}
+
+{% block head_content %}
+
+<title>@Ingredient-Recipe Creation</title>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container h-30">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-5 col-lg-5 pt-2 pl-5 pr-5 pb-5" id="auth-container">
+
+            <form method="Post">
+                {% csrf_token %}
+
+                <div class="row mt-2 ">
+                    <p><strong>Create ingredients for your recipes!</strong> </p>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="Choose your recipe!">{{form.recipe.label}}</label>
+                    {{form.recipe}}
+                </div>
+
+                <div class="form-group">
+                    <label for="Choose your ingredients!">{{form.ingredient.label}}</label>
+                    {{form.ingredient}}
+                </div>
+
+
+                <div class="form-group">
+                    <label>Quantity per ingredient:</label>
+                    <input
+                        class="form-control {% if form.ingredient.errors %}is-invalid{% endif %}"
+                        type="text"
+                        name="quantity"
+                        placeholder=""
+                        value = "{% if form.errors %}{{form.quantity.value}}{% endif %}"
+                    >
+                    <div class="invalid-feedback">
+                        {% for error in form.quantity.errors %}{{ error }}{% endfor %}
+                    </div>
+                </div>
+                
+                <!-- <div class="form-group">
+                    <label for="">{{form.units.label}}</label>
+                    {{form.units}}
+                </div> -->
+            
+                {# Units Field field #}
+                <!-- <div class="form-group">
+                    <label>Units:</label>
+                    <input
+                        class="form-control {% if form.units.errors %}is-invalid{% endif %}"
+                        type="text"
+                        name="units"
+                        placeholder="Unit of measure of the ingredient"
+                        required
+                    >
+                    <div class="invalid-feedback">
+                        {% for error in form.photo.errors %}{{ error }}{% endfor %}
+                    </div>
+                </div> -->
+                <button type="submit" class="btn btn-primary btn-block mt-5">Add other ingredient!</button>
+                <button type="submit" class="btn btn-danger btn-block mt-1">Save!</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
