@@ -15,6 +15,7 @@ class RecipeForm(forms.ModelForm):
             raise forms.ValidationError("Recipe name already exists")
         return data
 
+
 class RecipeIngredientForm(forms.ModelForm):
 
     class Meta:
@@ -22,8 +23,9 @@ class RecipeIngredientForm(forms.ModelForm):
         fields = ('recipe', 'ingredient', 'quantity')
 
     recipe = forms.ModelChoiceField(
-        queryset= Recipe.objects.all(),
-        widget = forms.Select(attrs={'class':'form-control', 'required':True})
+        queryset=Recipe.objects.all(),
+        widget=forms.Select(
+            attrs={'class': 'form-control', 'required': True})
     )
 
     ingredient = forms.ModelChoiceField(
@@ -38,5 +40,3 @@ class RecipeIngredientForm(forms.ModelForm):
         if RecipeIngredient.objects.filter(ingredient=data).exists():
             raise forms.ValidationError("Ingredient already included")
         return data
-
-    
