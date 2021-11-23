@@ -28,8 +28,12 @@
                 <div class="form-group">
                     <label for="Choose your ingredients!">{{form.ingredient.label}}</label>
                     {{form.ingredient}}
-                </div>
 
+                </div>
+                
+                <div class="invalid-feedback">
+                    {% for error in form.ingredient.errors %}{{ error }}{% endfor %}
+                </div>
 
                 <div class="form-group">
                     <label>Quantity per ingredient:</label>
@@ -71,6 +75,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 {% endblock %}

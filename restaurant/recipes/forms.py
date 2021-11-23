@@ -33,4 +33,10 @@ class RecipeIngredientForm(forms.ModelForm):
 
     quantity = forms.FloatField(min_value=0)
 
+    def clean_ingredient(self):
+        data = self.cleaned_data['ingredient']
+        if RecipeIngredient.objects.filter(ingredient=data).exists():
+            raise forms.ValidationError("Ingredient already included")
+        return data
+
     
